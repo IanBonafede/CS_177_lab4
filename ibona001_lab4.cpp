@@ -34,7 +34,7 @@ string people[2] = {"arr_cust","dep_cust"}; // who was generated
 
 void shuttle(long id );                  // trajectory of the shuttle bus consists of...
 void loop_around_airport(long & seats_used, long &id);      // ... repeated trips around airport
-void load_shuttle(long whereami, long & on_board); // posssibly loading passengers
+void load_shuttle(long whereami, long & on_board, long &id); // posssibly loading passengers
 qtable shuttle_occ("bus occupancy");  // time average of how full is the bus
 
 int t, s, m;
@@ -83,7 +83,7 @@ extern "C" void sim()      // main process
 
 void make_passengers(long whereami)
 {
-  const char* myName=places[whereami].c_str(); // hack because CSIM wants a char*
+  //const char* myName=places[whereami].c_str(); // hack because CSIM wants a char*
   create(myName);
 
   while(clock < 1440.)          // run for one day (in minutes)
@@ -111,16 +111,16 @@ void passenger(long whoami)
 
   buttons[whoami].reserve();     // join the queue at my starting location
   shuttle_called->send(whoami);  // head of queue, so call shuttle
-  hop_on->receive((long*) &myShuttleID);        // wait for shuttle and invitation to board
+  hop_on[whoami]->receive((long*) &myShuttleID);        // wait for shuttle and invitation to board
   hold(uniform(0.5,1.0));        // takes time to get seated
-  boarded[myShuttle].set();                 // tell driver you are in your seat
+  boarded[myShuttleID].set();                 // tell driver you are in your seat
   buttons[whoami].release();     // let next person (if any) access button
   while(dest != wheretogo) {
-    get_off_now[myShuttle]->receive((long*) &dest);            // everybody off when shuttle reaches next stop
+    get_off_now[myShuttleID]->receive((long*) &dest);            // everybody off when shuttle reaches next stop
     if(dest == wheretogo)
-      got_off[myShuttle]->send("yes");
+      got_off[myShuttleID]->send("yes");
     else
-      got_off[myShuttle]->send("no");
+      got_off[myShuttleID]->send("no");
   }
   
 }
@@ -164,7 +164,7 @@ void loop_around_airport(long &seats_used, long &id) { // one trip around the ai
   
   
   for(int i = 0; i < t+1; i++) { // loop through all places
-    placeCurbs[i]->reserve();
+    placeCurbs[i].reserve();
     
     load_shuttle(i, seats_used, id);
     shuttle_occ.note_value(seats_used);
@@ -173,14 +173,14 @@ void loop_around_airport(long &seats_used, long &id) { // one trip around the ai
   
     // drop off all departing passengers at airport terminal
     for(int j = 0; j < seats_used; j++) {
-      get_off_now[id]->send(i); // open door and let them off
-      got_off[id]->receive((long*) &didGetOff);
-      if(didGetOff == "yes")
+      get_off_now[id].send(i); // open door and let them off
+      got_off[id].receive((long*) &didGetOff);
+      if(didGetOff == (long)"yes")
     	  seats_used = seats_used - 1;
     }
     shuttle_occ.note_value(seats_used);
 
-    placeCurbs[i]->release();
+    placeCurbs[i].release();
     hold (uniform(3,5));  // drive to next airport terminal or rest
   }
   // Back to starting point. Bus is empty. Maybe I can rest...
@@ -190,10 +190,10 @@ void load_shuttle(long whereami, long &on_board, long &id)  // manage passenger 
 {
   // invite passengers to enter, one at a time, until all seats are full
   while((on_board < NUM_SEATS) &&
-    (buttons[whereami]->num_busy() + buttons[whereami]->qlength() > 0))
+    (buttons[whereami].num_busy() + buttons[whereami].qlength() > 0))
   {
-    hop_on->send(id);// invite one person to board
-    boarded[id]->wait();  // pause until that person is seated
+    hop_on.send(id);// invite one person to board
+    boarded[id].wait();  // pause until that person is seated
     on_board++;
     hold(TINY);  // let next passenger (if any) reset the button
   }
