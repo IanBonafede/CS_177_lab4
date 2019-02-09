@@ -25,7 +25,7 @@ mailbox *shuttle_called; // call buttons at each location
 
 facility_set *placeCurbs;
 
-string *places[];
+string *places;
 
 void make_passengers(long whereami);       // passenger generator
 long group_size();
@@ -48,6 +48,7 @@ extern "C" void sim()      // main process
   cin >> s; 
   cout << "Interarrival mean time: "; 
   cin >> m;
+  
   //0 = carlot, 1->t = terminals
   buttons = new facility_set("Curb",t+1);
   rest = new facility("rest");
@@ -58,7 +59,7 @@ extern "C" void sim()      // main process
   shuttle_called = new mailbox("call button");
   placeCurbs = new facility_set("shuttle spots", t+1);
 
-  places = new string[t];
+  places = new string[t+1];
   places[0] = "Car lot";
   for(int i = 1; i < t+1; i++) {
     places[i] = "Terminal " + to_string(i);
