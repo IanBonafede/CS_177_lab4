@@ -26,12 +26,13 @@ mailbox *shuttle_called; // call buttons at each location
 facility_set *placeCurbs;
 
 string *places; // where to generate
+string *people; // who was generated
 
 void make_passengers(long whereami);       // passenger generator
 long group_size();
 
 void passenger(long whoami);                // passenger trajectory
-string people[2] = {"arr_cust","dep_cust"}; // who was generated
+
 
 void shuttle(long id );                  // trajectory of the shuttle bus consists of...
 void loop_around_airport(long & seats_used, long &id);      // ... repeated trips around airport
@@ -71,6 +72,12 @@ extern "C" void sim()      // main process
   places[0] = "Car lot";
   for(int i = 1; i < t+1; i++) {
     places[i] = "Terminal " + to_string(i);
+  }
+  
+  people = new string[t+1];
+  people[0] = "dep_cust";
+  for(int i = 1; i < t+1; i++) {
+    people[i] = "arr_cust" + to_string(i);
   }
   
   
@@ -116,7 +123,7 @@ void passenger(long whoami)
   long myShuttleID = -1;
   long dest = -2;
   while(wheretogo == -1 && wheretogo == whoami && wheretogo == whoami + 1) 
-    wheretogo = uniform(0, t);
+    wheretogo = (int) uniform(0, t);
 
   create(myName);
 	
