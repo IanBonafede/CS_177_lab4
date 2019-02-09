@@ -25,7 +25,7 @@ mailbox *shuttle_called; // call buttons at each location
 
 facility_set *placeCurbs;
 
-string places[2] = {"Terminal", "CarLot"}; // where to generate
+string *places; // where to generate
 
 void make_passengers(long whereami);       // passenger generator
 long group_size();
@@ -58,13 +58,15 @@ extern "C" void sim()      // main process
   boarded = new event_set("boarded", s);
   shuttle_called = new mailbox("call button");
   placeCurbs = new facility_set("shuttle spots", t+1);
+  
 
+  cout << "test1" << endl;
   places = new string[t+1];
   places[0] = "Car lot";
   for(int i = 1; i < t+1; i++) {
     places[i] = "Terminal " + to_string(i);
   }
-  
+  cout << "test2" << endl;
   
 	
   create("sim");
@@ -72,10 +74,10 @@ extern "C" void sim()      // main process
   
   for(int i = 0; i < t+1; i++) {
     make_passengers(i);  // generate streams of customers
-  }
+  }cout << "test3" << endl;
   for(int i = 0; i < s; i++) {
     shuttle(i);  // create a single shuttle
-  }
+  }cout << "test4" << endl;
   hold (1440);              // wait for a whole day (in minutes) to pass
   report();
   status_facilities();
