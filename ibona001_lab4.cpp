@@ -25,6 +25,7 @@ mailbox *shuttle_called; // call buttons at each location
 
 facility_set *placeCurbs;
 
+string *places[];
 
 void make_passengers(long whereami);       // passenger generator
 long group_size();
@@ -57,11 +58,11 @@ extern "C" void sim()      // main process
   shuttle_called = new mailbox("call button");
   placeCurbs = new facility_set("shuttle spots", t+1);
 
-  /*places = new string[t];
+  places = new string[t];
   places[0] = "Car lot";
   for(int i = 1; i < t+1; i++) {
     places[i] = "Terminal " + to_string(i);
-  }*/
+  }
   
   
 	
@@ -118,9 +119,9 @@ void passenger(long whoami)
   while(dest != wheretogo) {
     (*get_off_now)[myShuttleID].receive((long*) &dest);            // everybody off when shuttle reaches next stop
     if(dest == wheretogo)
-      (*got_off)[myShuttleID].send("yes");
+      (*got_off)[myShuttleID].send((long)"yes");
     else
-      (*got_off)[myShuttleID].send("no");
+      (*got_off)[myShuttleID].send((long)"no");
   }
   
 }
@@ -164,7 +165,7 @@ void loop_around_airport(long &seats_used, long &id) { // one trip around the ai
   
   
   for(int i = 0; i < t+1; i++) { // loop through all places
-    (*placeCurbs[i]).reserve();
+    (*placeCurbs)[i].reserve();
     
     load_shuttle(i, seats_used, id);
     shuttle_occ.note_value(seats_used);
@@ -180,7 +181,7 @@ void loop_around_airport(long &seats_used, long &id) { // one trip around the ai
     }
     shuttle_occ.note_value(seats_used);
 
-    (*placeCurbs[i]).release();
+    (*placeCurbs)[i].release();
     hold (uniform(3,5));  // drive to next airport terminal or rest
   }
   // Back to starting point. Bus is empty. Maybe I can rest...
