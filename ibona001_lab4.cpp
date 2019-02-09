@@ -38,7 +38,9 @@ void loop_around_airport(long & seats_used, long &id);      // ... repeated trip
 void load_shuttle(long whereami, long & on_board, long &id); // posssibly loading passengers
 qtable shuttle_occ("bus occupancy");  // time average of how full is the bus
 
-int t, s, m;
+int t;
+int s;
+int m;
 
 extern "C" void sim()      // main process
 {
