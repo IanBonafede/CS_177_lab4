@@ -85,8 +85,9 @@ extern "C" void sim()      // main process
     shuttle(i);  // create a single shuttle
   }
   hold (1440);              // wait for a whole day (in minutes) to pass
-  report();
   cout << "test" << endl;
+  report();
+  
   status_facilities();
 }
 
