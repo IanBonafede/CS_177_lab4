@@ -42,10 +42,13 @@ int t, s, m;
 
 extern "C" void sim()      // main process
 {
+  cout << "test0" << endl;
   cout << "Number of terminals: "; 
   cin >> t; 
+  cout << "test0" << endl;
   cout << "Number of shuttle busses: "; 
   cin >> s; 
+  cout << "test0" << endl;
   cout << "Interarrival mean time: "; 
   cin >> m;
   
