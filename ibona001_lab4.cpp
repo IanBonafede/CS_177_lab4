@@ -19,7 +19,7 @@ facility *rest;           // dummy facility indicating an idle shuttle
 mailbox_set *hop_on;  // invite one customer to board at this stop
 event_set *boarded;             // one customer responds after taking a seat
 mailbox_set *get_off_now;  // all customers can get off shuttle
-ailbox_set *got_off;  // all customers can get off shuttle
+mailbox_set *got_off;  // all customers can get off shuttle
 
 mailbox *shuttle_called; // call buttons at each location
 
@@ -27,16 +27,17 @@ facility_set *placeCurbs;
 
 
 void make_passengers(long whereami);       // passenger generator
-string places[];
 long group_size();
 
 void passenger(long whoami);                // passenger trajectory
 string people[2] = {"arr_cust","dep_cust"}; // who was generated
 
 void shuttle(long id );                  // trajectory of the shuttle bus consists of...
-void loop_around_airport(long & seats_used);      // ... repeated trips around airport
+void loop_around_airport(long & seats_used, long &id);      // ... repeated trips around airport
 void load_shuttle(long whereami, long & on_board); // posssibly loading passengers
 qtable shuttle_occ("bus occupancy");  // time average of how full is the bus
+
+int t, s, m;
 
 extern "C" void sim()      // main process
 {
@@ -50,17 +51,17 @@ extern "C" void sim()      // main process
   buttons = new facility_set("Curb",t+1);
   rest = new facility("rest");
   get_off_now = new mailbox_set("get_off_now", s); // each shuttle has a mailbox for get off now
-  got_off = new mailbox_set("get_off_now", s); // each shuttle has a mailbox for get off now
+  got_off = new mailbox_set("got_off", s); // each shuttle has a mailbox to see if they get off
   hop_on = new mailbox_set("board shuttle", t+1); 
   boarded = new event_set("boarded", s);
   shuttle_called = new mailbox("call button");
   placeCurbs = new facility_set("shuttle spots", t+1);
 
-  places = new string[t];
+  /*places = new string[t];
   places[0] = "Car lot";
   for(int i = 1; i < t+1; i++) {
     places[i] = "Terminal " + to_string(i);
-  }
+  }*/
   
   
 	
@@ -108,7 +109,7 @@ void passenger(long whoami)
   create(myName);
 	
 
-  buttons[whoami]->reserve();     // join the queue at my starting location
+  buttons[whoami].reserve();     // join the queue at my starting location
   shuttle_called->send(whoami);  // head of queue, so call shuttle
   hop_on->receive((long*) &myShuttleID);        // wait for shuttle and invitation to board
   hold(uniform(0.5,1.0));        // takes time to get seated
@@ -132,9 +133,9 @@ void shuttle(long id) {
   while(1) {  // loop forever
     // start off in idle state, waiting for the first call...
     
-    rest.reserve();                   // relax at garage till called from somewhere
+    rest->reserve();                   // relax at garage till called from somewhere
     shuttle_called->receive((long*) &who_pushed);
-    rest.release();                   // and back to work we go!
+    rest->release();                   // and back to work we go!
 
     long seats_used = 0;              // shuttle is initially empty
     shuttle_occ.note_value(seats_used);
