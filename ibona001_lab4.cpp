@@ -49,6 +49,7 @@ extern "C" void sim()      // main process
   cout << "Interarrival mean time: "; 
   cin >> m;
   
+  cout << "test0" << endl;
   //0 = carlot, 1->t = terminals
   buttons = new facility_set("Curb",t+1);
   rest = new facility("rest");
