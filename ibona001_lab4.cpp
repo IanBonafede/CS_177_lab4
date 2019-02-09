@@ -44,17 +44,17 @@ int m;
 
 extern "C" void sim()      // main process
 {
-  cout << "test0" << endl;
+  
   cout << "Number of terminals: "; 
   cin >> t; 
-  cout << "test0" << endl;
+  
   cout << "Number of shuttle busses: "; 
   cin >> s; 
-  cout << "test0" << endl;
+  
   cout << "Interarrival mean time: "; 
   cin >> m;
   
-  cout << "test0" << endl;
+  
   //0 = carlot, 1->t = terminals
   buttons = new facility_set("Curb",t+1);
   rest = new facility("rest");
@@ -66,13 +66,13 @@ extern "C" void sim()      // main process
   placeCurbs = new facility_set("shuttle spots", t+1);
   
 
-  cout << "test1" << endl;
+  
   places = new string[t+1];
   places[0] = "Car lot";
   for(int i = 1; i < t+1; i++) {
     places[i] = "Terminal " + to_string(i);
   }
-  cout << "test2" << endl;
+  
   
 	
   create("sim");
@@ -80,12 +80,13 @@ extern "C" void sim()      // main process
   
   for(int i = 0; i < t+1; i++) {
     make_passengers(i);  // generate streams of customers
-  }cout << "test3" << endl;
+  }
   for(int i = 0; i < s; i++) {
     shuttle(i);  // create a single shuttle
-  }cout << "test4" << endl;
+  }
   hold (1440);              // wait for a whole day (in minutes) to pass
   report();
+  cout << "test" << endl;
   status_facilities();
 }
 
