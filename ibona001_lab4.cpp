@@ -25,7 +25,7 @@ mailbox *shuttle_called; // call buttons at each location
 
 facility_set *placeCurbs;
 
-string *places;
+string places[2] = {"Terminal", "CarLot"}; // where to generate
 
 void make_passengers(long whereami);       // passenger generator
 long group_size();
