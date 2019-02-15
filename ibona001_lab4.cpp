@@ -183,7 +183,7 @@ void loop_around_airport(long &seats_used, long &id) { // one trip around the ai
   // Start by picking up departing passengers at car lot
   long didGetOff;
   
-  //cout << "looping" << endl;
+  cout << "looping" << endl;
   
   for(int i = 0; i < t+1; i++) { // loop through all places
     (*placeCurbs)[i].reserve();
@@ -212,7 +212,7 @@ void loop_around_airport(long &seats_used, long &id) { // one trip around the ai
     (*placeCurbs)[i].release();
     hold (uniform(3,5));  // drive to next airport terminal or rest
   }
-  //cout << "done looping" << endl;
+  cout << "done looping" << endl;
   // Back to starting point. Bus is empty. Maybe I can rest...
 }
 
