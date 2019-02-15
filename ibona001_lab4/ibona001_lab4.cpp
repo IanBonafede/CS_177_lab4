@@ -94,7 +94,7 @@ extern "C" void sim()      // main process
   hold (1440);              // wait for a whole day (in minutes) to pass
   report();
   
-  //status_facilities();
+  status_facilities();
 }
 
 // Model segment 1: generate groups of new passengers at specified location
@@ -126,7 +126,7 @@ void passenger(long whoami)
 
   create(myName);
 	
-  
+
   (*buttons)[whoami].reserve();     // join the queue at my starting location
   shuttle_called->send(whoami);  // head of queue, so call shuttle
   (*hop_on)[whoami].receive((long*) &myShuttleID);        // wait for shuttle and invitation to board

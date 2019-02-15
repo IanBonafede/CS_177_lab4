@@ -1,0 +1,3027 @@
+
+Report
+
+---------design-----------
+
+I changed most of the program. Each place you can visit has a facility that the shuttle busses uses to get in line and pick people up. There is an event set for boarding the shuttles(1 per shuttle). Communication between the people and shuttles consists of mailboxes. This communication includes hopping on(tells the person to get on and gives the person the id of the shuttle), getting off now(tells the person to get off and tells the person where they are), and got off(tells the driver whether or not they got off). The facilities and mailboxes were created dynamically, so I needed to change the syntax to handle the it.
+
+----------example output---------------
+
+
+
+
+
+
+
+ibona001@bolt $ ./ibona001_lab4
+Number of terminals: 4
+Number of shuttle busses: 4
+Interarrival mean time: 1
+
+
+***************
+CSIM EXECUTION ERROR 17 DETECTED AT TIME 69.490726 
+<<<<<<17. TOO MANY PROCESSES                    
+***************
+
+            C++/CSIM Simulation Report (Version 19.0 for Linux x86)
+
+                           Fri Feb  8 21:57:33 2019
+
+
+                     Ending simulation time:        69.491
+                     Elapsed simulation time:       69.491
+                     CPU time used (seconds):        0.000
+
+
+FACILITY SUMMARY 
+
+facility     service    service          through-    queue     response   compl
+name           disc      time    util.     put       length      time     count
+--------------------------------------------------------------------------------
+Curb[0]      fcfs       0.00000  0.000    0.00000   96.86865    0.00000        0
+Curb[1]      fcfs       0.00000  0.000    0.00000   87.07142    0.00000        0
+Curb[2]      fcfs       0.00000  0.000    0.00000   84.19067    0.00000        0
+Curb[3]      fcfs       0.00000  0.000    0.00000   71.97591    0.00000        0
+Curb[4]      fcfs       0.00000  0.000    0.00000  124.18458    0.00000        0
+rest         fcfs       0.23511  0.017    0.07195    2.89389   40.21971        5
+
+
+
+QTABLE 1:  bus occupancy
+
+      initial       0      minimum       0      mean                    0.000000
+      final         0      maximum       0      variance                0.000000
+      entries       0      range         0      standard deviation      0.000000
+      exits         0                           coeff of variation      0.000000
+
+                                             cumulative
+        number    total time    proportion   proportion
+
+             0      69.49073     1.000000     1.000000   ********************
+             1       0.00000     0.000000     1.000000                       
+
+Model Status: csim_clock = 69.491
+
+STATUS OF PROCESSES 
+
+process              state        priority    class     
+--------------------------------------------------------
+sim.1                suspended        1.0     default    
+Car lot.2            active           1.0     default    
+Terminal 1.3         suspended        1.0     default    
+Terminal 2.4         suspended        1.0     default    
+Terminal 3.5         suspended        1.0     default    
+Terminal 4.6         suspended        1.0     default    
+shuttle.7            suspended        1.0     default    
+shuttle.8            suspended        1.0     default    
+shuttle.9            suspended        1.0     default    
+shuttle.10           suspended        1.0     default    
+arr_cust4.11         suspended        1.0     default    
+arr_cust4.12         suspended        1.0     default    
+arr_cust3.13         suspended        1.0     default    
+dep_cust.14          suspended        1.0     default    
+dep_cust.15          suspended        1.0     default    
+arr_cust4.16         suspended        1.0     default    
+arr_cust4.17         suspended        1.0     default    
+arr_cust4.18         suspended        1.0     default    
+arr_cust4.19         suspended        1.0     default    
+arr_cust2.20         suspended        1.0     default    
+arr_cust2.21         suspended        1.0     default    
+arr_cust4.22         suspended        1.0     default    
+arr_cust4.23         suspended        1.0     default    
+arr_cust4.24         suspended        1.0     default    
+arr_cust4.25         suspended        1.0     default    
+arr_cust4.26         suspended        1.0     default    
+arr_cust2.27         suspended        1.0     default    
+arr_cust4.28         suspended        1.0     default    
+arr_cust4.29         suspended        1.0     default    
+arr_cust1.30         suspended        1.0     default    
+arr_cust1.31         suspended        1.0     default    
+arr_cust1.32         suspended        1.0     default    
+arr_cust1.33         suspended        1.0     default    
+arr_cust1.34         suspended        1.0     default    
+arr_cust2.35         suspended        1.0     default    
+arr_cust2.36         suspended        1.0     default    
+dep_cust.37          suspended        1.0     default    
+dep_cust.38          suspended        1.0     default    
+dep_cust.39          suspended        1.0     default    
+dep_cust.40          suspended        1.0     default    
+dep_cust.41          suspended        1.0     default    
+dep_cust.42          suspended        1.0     default    
+dep_cust.43          suspended        1.0     default    
+dep_cust.44          suspended        1.0     default    
+dep_cust.45          suspended        1.0     default    
+dep_cust.46          suspended        1.0     default    
+dep_cust.47          suspended        1.0     default    
+dep_cust.48          suspended        1.0     default    
+arr_cust1.49         suspended        1.0     default    
+arr_cust1.50         suspended        1.0     default    
+arr_cust2.51         suspended        1.0     default    
+arr_cust2.52         suspended        1.0     default    
+dep_cust.53          suspended        1.0     default    
+dep_cust.54          suspended        1.0     default    
+dep_cust.55          suspended        1.0     default    
+dep_cust.56          suspended        1.0     default    
+dep_cust.57          suspended        1.0     default    
+arr_cust4.58         suspended        1.0     default    
+arr_cust4.59         suspended        1.0     default    
+arr_cust4.60         suspended        1.0     default    
+arr_cust3.61         suspended        1.0     default    
+arr_cust3.62         suspended        1.0     default    
+arr_cust3.63         suspended        1.0     default    
+arr_cust3.64         suspended        1.0     default    
+arr_cust3.65         suspended        1.0     default    
+dep_cust.66          suspended        1.0     default    
+dep_cust.67          suspended        1.0     default    
+arr_cust1.68         suspended        1.0     default    
+arr_cust1.69         suspended        1.0     default    
+arr_cust1.70         suspended        1.0     default    
+arr_cust1.71         suspended        1.0     default    
+arr_cust1.72         suspended        1.0     default    
+arr_cust1.73         suspended        1.0     default    
+arr_cust3.74         suspended        1.0     default    
+arr_cust3.75         suspended        1.0     default    
+arr_cust3.76         suspended        1.0     default    
+arr_cust3.77         suspended        1.0     default    
+arr_cust3.78         suspended        1.0     default    
+dep_cust.79          suspended        1.0     default    
+dep_cust.80          suspended        1.0     default    
+arr_cust2.81         suspended        1.0     default    
+arr_cust2.82         suspended        1.0     default    
+arr_cust2.83         suspended        1.0     default    
+arr_cust2.84         suspended        1.0     default    
+arr_cust2.85         suspended        1.0     default    
+arr_cust4.86         suspended        1.0     default    
+arr_cust1.87         suspended        1.0     default    
+arr_cust1.88         suspended        1.0     default    
+arr_cust1.89         suspended        1.0     default    
+arr_cust1.90         suspended        1.0     default    
+arr_cust1.91         suspended        1.0     default    
+arr_cust3.92         suspended        1.0     default    
+arr_cust4.93         suspended        1.0     default    
+arr_cust1.94         suspended        1.0     default    
+arr_cust2.95         suspended        1.0     default    
+arr_cust2.96         suspended        1.0     default    
+arr_cust2.97         suspended        1.0     default    
+arr_cust2.98         suspended        1.0     default    
+arr_cust3.99         suspended        1.0     default    
+arr_cust3.100        suspended        1.0     default    
+arr_cust4.101        suspended        1.0     default    
+arr_cust1.102        suspended        1.0     default    
+arr_cust1.103        suspended        1.0     default    
+arr_cust2.104        suspended        1.0     default    
+arr_cust2.105        suspended        1.0     default    
+arr_cust4.106        suspended        1.0     default    
+arr_cust2.107        suspended        1.0     default    
+dep_cust.108         suspended        1.0     default    
+dep_cust.109         suspended        1.0     default    
+dep_cust.110         suspended        1.0     default    
+dep_cust.111         suspended        1.0     default    
+dep_cust.112         suspended        1.0     default    
+arr_cust4.113        suspended        1.0     default    
+arr_cust4.114        suspended        1.0     default    
+arr_cust4.115        suspended        1.0     default    
+arr_cust4.116        suspended        1.0     default    
+arr_cust4.117        suspended        1.0     default    
+arr_cust4.118        suspended        1.0     default    
+dep_cust.119         suspended        1.0     default    
+dep_cust.120         suspended        1.0     default    
+dep_cust.121         suspended        1.0     default    
+dep_cust.122         suspended        1.0     default    
+dep_cust.123         suspended        1.0     default    
+arr_cust4.124        suspended        1.0     default    
+arr_cust4.125        suspended        1.0     default    
+arr_cust2.126        suspended        1.0     default    
+arr_cust2.127        suspended        1.0     default    
+arr_cust2.128        suspended        1.0     default    
+arr_cust2.129        suspended        1.0     default    
+arr_cust2.130        suspended        1.0     default    
+dep_cust.131         suspended        1.0     default    
+arr_cust4.132        suspended        1.0     default    
+arr_cust4.133        suspended        1.0     default    
+arr_cust4.134        suspended        1.0     default    
+arr_cust4.135        suspended        1.0     default    
+arr_cust4.136        suspended        1.0     default    
+arr_cust1.137        suspended        1.0     default    
+arr_cust4.138        suspended        1.0     default    
+arr_cust3.139        suspended        1.0     default    
+arr_cust4.140        suspended        1.0     default    
+arr_cust4.141        suspended        1.0     default    
+arr_cust4.142        suspended        1.0     default    
+arr_cust4.143        suspended        1.0     default    
+arr_cust4.144        suspended        1.0     default    
+arr_cust3.145        suspended        1.0     default    
+arr_cust3.146        suspended        1.0     default    
+arr_cust3.147        suspended        1.0     default    
+arr_cust3.148        suspended        1.0     default    
+arr_cust3.149        suspended        1.0     default    
+arr_cust2.150        suspended        1.0     default    
+arr_cust2.151        suspended        1.0     default    
+dep_cust.152         suspended        1.0     default    
+dep_cust.153         suspended        1.0     default    
+dep_cust.154         suspended        1.0     default    
+dep_cust.155         suspended        1.0     default    
+dep_cust.156         suspended        1.0     default    
+arr_cust2.157        suspended        1.0     default    
+arr_cust2.158        suspended        1.0     default    
+arr_cust2.159        suspended        1.0     default    
+arr_cust2.160        suspended        1.0     default    
+arr_cust2.161        suspended        1.0     default    
+dep_cust.162         suspended        1.0     default    
+dep_cust.163         suspended        1.0     default    
+arr_cust1.164        suspended        1.0     default    
+arr_cust1.165        suspended        1.0     default    
+arr_cust4.166        suspended        1.0     default    
+arr_cust4.167        suspended        1.0     default    
+arr_cust4.168        suspended        1.0     default    
+arr_cust4.169        suspended        1.0     default    
+arr_cust4.170        suspended        1.0     default    
+arr_cust3.171        suspended        1.0     default    
+arr_cust3.172        suspended        1.0     default    
+arr_cust4.173        suspended        1.0     default    
+arr_cust4.174        suspended        1.0     default    
+arr_cust2.175        suspended        1.0     default    
+arr_cust4.176        suspended        1.0     default    
+arr_cust1.177        suspended        1.0     default    
+arr_cust1.178        suspended        1.0     default    
+arr_cust1.179        suspended        1.0     default    
+arr_cust1.180        suspended        1.0     default    
+arr_cust1.181        suspended        1.0     default    
+arr_cust2.182        suspended        1.0     default    
+arr_cust2.183        suspended        1.0     default    
+arr_cust2.184        suspended        1.0     default    
+arr_cust2.185        suspended        1.0     default    
+arr_cust2.186        suspended        1.0     default    
+arr_cust3.187        suspended        1.0     default    
+arr_cust3.188        suspended        1.0     default    
+arr_cust3.189        suspended        1.0     default    
+arr_cust3.190        suspended        1.0     default    
+arr_cust3.191        suspended        1.0     default    
+arr_cust1.192        suspended        1.0     default    
+arr_cust1.193        suspended        1.0     default    
+dep_cust.194         suspended        1.0     default    
+dep_cust.195         suspended        1.0     default    
+arr_cust3.196        suspended        1.0     default    
+arr_cust3.197        suspended        1.0     default    
+arr_cust4.198        suspended        1.0     default    
+arr_cust2.199        suspended        1.0     default    
+arr_cust2.200        suspended        1.0     default    
+arr_cust2.201        suspended        1.0     default    
+arr_cust2.202        suspended        1.0     default    
+arr_cust2.203        suspended        1.0     default    
+arr_cust4.204        suspended        1.0     default    
+arr_cust4.205        suspended        1.0     default    
+arr_cust4.206        suspended        1.0     default    
+arr_cust4.207        suspended        1.0     default    
+arr_cust4.208        suspended        1.0     default    
+arr_cust1.209        suspended        1.0     default    
+arr_cust1.210        suspended        1.0     default    
+arr_cust1.211        suspended        1.0     default    
+arr_cust1.212        suspended        1.0     default    
+arr_cust1.213        suspended        1.0     default    
+arr_cust2.214        suspended        1.0     default    
+arr_cust2.215        suspended        1.0     default    
+arr_cust2.216        suspended        1.0     default    
+arr_cust2.217        suspended        1.0     default    
+arr_cust2.218        suspended        1.0     default    
+arr_cust3.219        suspended        1.0     default    
+arr_cust3.220        suspended        1.0     default    
+arr_cust1.221        suspended        1.0     default    
+arr_cust3.222        suspended        1.0     default    
+arr_cust2.223        suspended        1.0     default    
+arr_cust3.224        suspended        1.0     default    
+arr_cust3.225        suspended        1.0     default    
+arr_cust2.226        suspended        1.0     default    
+arr_cust2.227        suspended        1.0     default    
+dep_cust.228         suspended        1.0     default    
+dep_cust.229         suspended        1.0     default    
+arr_cust1.230        suspended        1.0     default    
+arr_cust1.231        suspended        1.0     default    
+arr_cust2.232        suspended        1.0     default    
+arr_cust4.233        suspended        1.0     default    
+arr_cust4.234        suspended        1.0     default    
+arr_cust4.235        suspended        1.0     default    
+arr_cust4.236        suspended        1.0     default    
+arr_cust4.237        suspended        1.0     default    
+dep_cust.238         suspended        1.0     default    
+dep_cust.239         suspended        1.0     default    
+arr_cust3.240        suspended        1.0     default    
+arr_cust3.241        suspended        1.0     default    
+dep_cust.242         suspended        1.0     default    
+dep_cust.243         suspended        1.0     default    
+arr_cust3.244        suspended        1.0     default    
+arr_cust3.245        suspended        1.0     default    
+dep_cust.246         suspended        1.0     default    
+dep_cust.247         suspended        1.0     default    
+arr_cust1.248        suspended        1.0     default    
+arr_cust1.249        suspended        1.0     default    
+arr_cust4.250        suspended        1.0     default    
+arr_cust4.251        suspended        1.0     default    
+arr_cust4.252        suspended        1.0     default    
+arr_cust4.253        suspended        1.0     default    
+arr_cust4.254        suspended        1.0     default    
+arr_cust4.255        suspended        1.0     default    
+arr_cust4.256        suspended        1.0     default    
+arr_cust4.257        suspended        1.0     default    
+arr_cust4.258        suspended        1.0     default    
+arr_cust4.259        suspended        1.0     default    
+arr_cust4.260        suspended        1.0     default    
+arr_cust4.261        suspended        1.0     default    
+arr_cust3.262        suspended        1.0     default    
+dep_cust.263         suspended        1.0     default    
+dep_cust.264         suspended        1.0     default    
+arr_cust1.265        suspended        1.0     default    
+arr_cust3.266        suspended        1.0     default    
+arr_cust4.267        suspended        1.0     default    
+arr_cust4.268        suspended        1.0     default    
+arr_cust1.269        suspended        1.0     default    
+arr_cust4.270        suspended        1.0     default    
+arr_cust2.271        suspended        1.0     default    
+arr_cust2.272        suspended        1.0     default    
+arr_cust3.273        suspended        1.0     default    
+arr_cust3.274        suspended        1.0     default    
+arr_cust2.275        suspended        1.0     default    
+arr_cust2.276        suspended        1.0     default    
+arr_cust4.277        suspended        1.0     default    
+arr_cust4.278        suspended        1.0     default    
+dep_cust.279         suspended        1.0     default    
+dep_cust.280         suspended        1.0     default    
+dep_cust.281         suspended        1.0     default    
+dep_cust.282         suspended        1.0     default    
+dep_cust.283         suspended        1.0     default    
+arr_cust4.284        suspended        1.0     default    
+arr_cust4.285        suspended        1.0     default    
+arr_cust1.286        suspended        1.0     default    
+arr_cust1.287        suspended        1.0     default    
+dep_cust.288         suspended        1.0     default    
+dep_cust.289         suspended        1.0     default    
+arr_cust4.290        suspended        1.0     default    
+arr_cust4.291        suspended        1.0     default    
+arr_cust4.292        suspended        1.0     default    
+arr_cust4.293        suspended        1.0     default    
+arr_cust4.294        suspended        1.0     default    
+arr_cust4.295        suspended        1.0     default    
+arr_cust4.296        suspended        1.0     default    
+arr_cust4.297        suspended        1.0     default    
+arr_cust4.298        suspended        1.0     default    
+arr_cust4.299        suspended        1.0     default    
+arr_cust3.300        suspended        1.0     default    
+arr_cust3.301        suspended        1.0     default    
+arr_cust3.302        suspended        1.0     default    
+arr_cust3.303        suspended        1.0     default    
+arr_cust3.304        suspended        1.0     default    
+arr_cust3.305        suspended        1.0     default    
+arr_cust3.306        suspended        1.0     default    
+dep_cust.307         suspended        1.0     default    
+dep_cust.308         suspended        1.0     default    
+arr_cust1.309        suspended        1.0     default    
+arr_cust1.310        suspended        1.0     default    
+arr_cust1.311        suspended        1.0     default    
+arr_cust2.312        suspended        1.0     default    
+arr_cust3.313        suspended        1.0     default    
+arr_cust3.314        suspended        1.0     default    
+dep_cust.315         suspended        1.0     default    
+dep_cust.316         suspended        1.0     default    
+arr_cust3.317        suspended        1.0     default    
+arr_cust3.318        suspended        1.0     default    
+arr_cust4.319        suspended        1.0     default    
+arr_cust4.320        suspended        1.0     default    
+dep_cust.321         suspended        1.0     default    
+arr_cust4.322        suspended        1.0     default    
+arr_cust4.323        suspended        1.0     default    
+arr_cust4.324        suspended        1.0     default    
+arr_cust4.325        suspended        1.0     default    
+arr_cust4.326        suspended        1.0     default    
+dep_cust.327         suspended        1.0     default    
+dep_cust.328         suspended        1.0     default    
+dep_cust.329         suspended        1.0     default    
+dep_cust.330         suspended        1.0     default    
+dep_cust.331         suspended        1.0     default    
+arr_cust4.332        suspended        1.0     default    
+arr_cust4.333        suspended        1.0     default    
+arr_cust4.334        suspended        1.0     default    
+arr_cust4.335        suspended        1.0     default    
+arr_cust4.336        suspended        1.0     default    
+dep_cust.337         suspended        1.0     default    
+arr_cust1.338        suspended        1.0     default    
+arr_cust1.339        suspended        1.0     default    
+arr_cust1.340        suspended        1.0     default    
+arr_cust1.341        suspended        1.0     default    
+arr_cust1.342        suspended        1.0     default    
+arr_cust1.343        suspended        1.0     default    
+arr_cust1.344        suspended        1.0     default    
+arr_cust1.345        suspended        1.0     default    
+arr_cust1.346        suspended        1.0     default    
+arr_cust1.347        suspended        1.0     default    
+arr_cust4.348        suspended        1.0     default    
+arr_cust4.349        suspended        1.0     default    
+arr_cust4.350        suspended        1.0     default    
+arr_cust4.351        suspended        1.0     default    
+arr_cust4.352        suspended        1.0     default    
+arr_cust2.353        suspended        1.0     default    
+arr_cust2.354        suspended        1.0     default    
+arr_cust4.355        suspended        1.0     default    
+dep_cust.356         suspended        1.0     default    
+arr_cust3.357        suspended        1.0     default    
+arr_cust3.358        suspended        1.0     default    
+arr_cust3.359        suspended        1.0     default    
+arr_cust3.360        suspended        1.0     default    
+arr_cust3.361        suspended        1.0     default    
+arr_cust2.362        suspended        1.0     default    
+arr_cust2.363        suspended        1.0     default    
+arr_cust2.364        suspended        1.0     default    
+arr_cust2.365        suspended        1.0     default    
+arr_cust2.366        suspended        1.0     default    
+arr_cust2.367        suspended        1.0     default    
+arr_cust2.368        suspended        1.0     default    
+dep_cust.369         suspended        1.0     default    
+dep_cust.370         suspended        1.0     default    
+dep_cust.371         suspended        1.0     default    
+arr_cust4.372        suspended        1.0     default    
+arr_cust4.373        suspended        1.0     default    
+arr_cust4.374        suspended        1.0     default    
+arr_cust4.375        suspended        1.0     default    
+arr_cust4.376        suspended        1.0     default    
+dep_cust.377         suspended        1.0     default    
+arr_cust2.378        suspended        1.0     default    
+arr_cust1.379        suspended        1.0     default    
+arr_cust1.380        suspended        1.0     default    
+arr_cust1.381        suspended        1.0     default    
+arr_cust1.382        suspended        1.0     default    
+arr_cust1.383        suspended        1.0     default    
+arr_cust1.384        suspended        1.0     default    
+arr_cust4.385        suspended        1.0     default    
+arr_cust4.386        suspended        1.0     default    
+arr_cust4.387        suspended        1.0     default    
+arr_cust4.388        suspended        1.0     default    
+arr_cust4.389        suspended        1.0     default    
+arr_cust1.390        suspended        1.0     default    
+arr_cust3.391        suspended        1.0     default    
+arr_cust4.392        suspended        1.0     default    
+dep_cust.393         suspended        1.0     default    
+dep_cust.394         suspended        1.0     default    
+dep_cust.395         suspended        1.0     default    
+dep_cust.396         suspended        1.0     default    
+dep_cust.397         suspended        1.0     default    
+dep_cust.398         suspended        1.0     default    
+dep_cust.399         suspended        1.0     default    
+dep_cust.400         suspended        1.0     default    
+dep_cust.401         suspended        1.0     default    
+dep_cust.402         suspended        1.0     default    
+dep_cust.403         suspended        1.0     default    
+arr_cust1.404        suspended        1.0     default    
+arr_cust2.405        suspended        1.0     default    
+arr_cust2.406        suspended        1.0     default    
+arr_cust2.407        suspended        1.0     default    
+arr_cust3.408        suspended        1.0     default    
+dep_cust.409         suspended        1.0     default    
+arr_cust4.410        suspended        1.0     default    
+arr_cust4.411        suspended        1.0     default    
+arr_cust4.412        suspended        1.0     default    
+arr_cust4.413        suspended        1.0     default    
+arr_cust4.414        suspended        1.0     default    
+dep_cust.415         suspended        1.0     default    
+dep_cust.416         suspended        1.0     default    
+arr_cust2.417        suspended        1.0     default    
+arr_cust2.418        suspended        1.0     default    
+arr_cust1.419        suspended        1.0     default    
+arr_cust1.420        suspended        1.0     default    
+arr_cust1.421        suspended        1.0     default    
+arr_cust1.422        suspended        1.0     default    
+arr_cust1.423        suspended        1.0     default    
+arr_cust1.424        suspended        1.0     default    
+arr_cust3.425        suspended        1.0     default    
+arr_cust2.426        suspended        1.0     default    
+arr_cust2.427        suspended        1.0     default    
+arr_cust2.428        suspended        1.0     default    
+arr_cust2.429        suspended        1.0     default    
+arr_cust2.430        suspended        1.0     default    
+arr_cust1.431        suspended        1.0     default    
+arr_cust1.432        suspended        1.0     default    
+arr_cust1.433        suspended        1.0     default    
+arr_cust1.434        suspended        1.0     default    
+arr_cust1.435        suspended        1.0     default    
+arr_cust3.436        suspended        1.0     default    
+arr_cust1.437        suspended        1.0     default    
+arr_cust1.438        suspended        1.0     default    
+dep_cust.439         suspended        1.0     default    
+dep_cust.440         suspended        1.0     default    
+arr_cust1.441        suspended        1.0     default    
+arr_cust1.442        suspended        1.0     default    
+arr_cust1.443        suspended        1.0     default    
+arr_cust1.444        suspended        1.0     default    
+arr_cust1.445        suspended        1.0     default    
+arr_cust2.446        suspended        1.0     default    
+arr_cust2.447        suspended        1.0     default    
+dep_cust.448         suspended        1.0     default    
+dep_cust.449         suspended        1.0     default    
+dep_cust.450         suspended        1.0     default    
+dep_cust.451         suspended        1.0     default    
+dep_cust.452         suspended        1.0     default    
+arr_cust1.453        suspended        1.0     default    
+arr_cust1.454        suspended        1.0     default    
+arr_cust1.455        suspended        1.0     default    
+arr_cust1.456        suspended        1.0     default    
+arr_cust1.457        suspended        1.0     default    
+arr_cust2.458        suspended        1.0     default    
+arr_cust2.459        suspended        1.0     default    
+arr_cust4.460        suspended        1.0     default    
+arr_cust2.461        suspended        1.0     default    
+arr_cust2.462        suspended        1.0     default    
+arr_cust4.463        suspended        1.0     default    
+arr_cust4.464        suspended        1.0     default    
+arr_cust4.465        suspended        1.0     default    
+arr_cust4.466        suspended        1.0     default    
+arr_cust3.467        suspended        1.0     default    
+arr_cust3.468        suspended        1.0     default    
+arr_cust3.469        suspended        1.0     default    
+arr_cust3.470        suspended        1.0     default    
+arr_cust3.471        suspended        1.0     default    
+arr_cust4.472        suspended        1.0     default    
+arr_cust4.473        suspended        1.0     default    
+arr_cust4.474        suspended        1.0     default    
+arr_cust4.475        suspended        1.0     default    
+arr_cust4.476        suspended        1.0     default    
+arr_cust1.477        suspended        1.0     default    
+arr_cust2.478        suspended        1.0     default    
+arr_cust2.479        suspended        1.0     default    
+arr_cust2.480        suspended        1.0     default    
+arr_cust2.481        suspended        1.0     default    
+arr_cust2.482        suspended        1.0     default    
+arr_cust3.483        suspended        1.0     default    
+dep_cust.484         suspended        1.0     default    
+arr_cust3.485        suspended        1.0     default    
+arr_cust3.486        suspended        1.0     default    
+arr_cust2.487        suspended        1.0     default    
+arr_cust4.488        suspended        1.0     default    
+arr_cust4.489        suspended        1.0     default    
+arr_cust4.490        suspended        1.0     default    
+arr_cust4.491        suspended        1.0     default    
+arr_cust4.492        suspended        1.0     default    
+arr_cust2.493        suspended        1.0     default    
+arr_cust2.494        suspended        1.0     default    
+arr_cust4.495        suspended        1.0     default    
+arr_cust4.496        suspended        1.0     default    
+arr_cust3.497        suspended        1.0     default    
+arr_cust4.498        suspended        1.0     default    
+arr_cust4.499        suspended        1.0     default    
+arr_cust3.500        suspended        1.0     default    
+arr_cust3.501        suspended        1.0     default    
+arr_cust3.502        suspended        1.0     default    
+arr_cust1.503        suspended        1.0     default    
+arr_cust1.504        suspended        1.0     default    
+arr_cust1.505        suspended        1.0     default    
+arr_cust1.506        suspended        1.0     default    
+dep_cust.507         suspended        1.0     default    
+arr_cust3.508        suspended        1.0     default    
+arr_cust3.509        suspended        1.0     default    
+arr_cust2.510        suspended        1.0     default    
+arr_cust2.511        suspended        1.0     default    
+arr_cust2.512        suspended        1.0     default    
+arr_cust2.513        suspended        1.0     default    
+arr_cust2.514        suspended        1.0     default    
+arr_cust2.515        suspended        1.0     default    
+arr_cust2.516        suspended        1.0     default    
+arr_cust2.517        suspended        1.0     default    
+arr_cust2.518        suspended        1.0     default    
+arr_cust2.519        suspended        1.0     default    
+arr_cust2.520        suspended        1.0     default    
+arr_cust2.521        suspended        1.0     default    
+arr_cust2.522        suspended        1.0     default    
+arr_cust2.523        suspended        1.0     default    
+arr_cust2.524        suspended        1.0     default    
+arr_cust3.525        suspended        1.0     default    
+arr_cust3.526        suspended        1.0     default    
+arr_cust1.527        suspended        1.0     default    
+arr_cust1.528        suspended        1.0     default    
+arr_cust1.529        suspended        1.0     default    
+arr_cust2.530        suspended        1.0     default    
+arr_cust4.531        suspended        1.0     default    
+arr_cust4.532        suspended        1.0     default    
+dep_cust.533         suspended        1.0     default    
+dep_cust.534         suspended        1.0     default    
+arr_cust2.535        suspended        1.0     default    
+arr_cust2.536        suspended        1.0     default    
+arr_cust3.537        suspended        1.0     default    
+arr_cust3.538        suspended        1.0     default    
+arr_cust4.539        suspended        1.0     default    
+arr_cust4.540        suspended        1.0     default    
+arr_cust4.541        suspended        1.0     default    
+arr_cust4.542        suspended        1.0     default    
+arr_cust4.543        suspended        1.0     default    
+arr_cust4.544        suspended        1.0     default    
+arr_cust4.545        suspended        1.0     default    
+arr_cust1.546        suspended        1.0     default    
+dep_cust.547         suspended        1.0     default    
+dep_cust.548         suspended        1.0     default    
+arr_cust2.549        suspended        1.0     default    
+arr_cust2.550        suspended        1.0     default    
+arr_cust2.551        suspended        1.0     default    
+arr_cust2.552        suspended        1.0     default    
+arr_cust2.553        suspended        1.0     default    
+arr_cust1.554        suspended        1.0     default    
+arr_cust1.555        suspended        1.0     default    
+arr_cust1.556        suspended        1.0     default    
+arr_cust1.557        suspended        1.0     default    
+arr_cust1.558        suspended        1.0     default    
+arr_cust1.559        suspended        1.0     default    
+arr_cust1.560        suspended        1.0     default    
+arr_cust3.561        suspended        1.0     default    
+arr_cust4.562        suspended        1.0     default    
+arr_cust4.563        suspended        1.0     default    
+arr_cust2.564        suspended        1.0     default    
+arr_cust2.565        suspended        1.0     default    
+arr_cust2.566        suspended        1.0     default    
+arr_cust2.567        suspended        1.0     default    
+arr_cust2.568        suspended        1.0     default    
+arr_cust3.569        suspended        1.0     default    
+arr_cust3.570        suspended        1.0     default    
+arr_cust3.571        suspended        1.0     default    
+arr_cust3.572        suspended        1.0     default    
+arr_cust3.573        suspended        1.0     default    
+arr_cust4.574        suspended        1.0     default    
+arr_cust4.575        suspended        1.0     default    
+arr_cust1.576        suspended        1.0     default    
+dep_cust.577         suspended        1.0     default    
+dep_cust.578         suspended        1.0     default    
+arr_cust1.579        suspended        1.0     default    
+arr_cust1.580        suspended        1.0     default    
+arr_cust1.581        suspended        1.0     default    
+arr_cust1.582        suspended        1.0     default    
+arr_cust1.583        suspended        1.0     default    
+dep_cust.584         suspended        1.0     default    
+dep_cust.585         suspended        1.0     default    
+dep_cust.586         suspended        1.0     default    
+arr_cust3.587        suspended        1.0     default    
+dep_cust.588         suspended        1.0     default    
+dep_cust.589         suspended        1.0     default    
+dep_cust.590         suspended        1.0     default    
+dep_cust.591         suspended        1.0     default    
+dep_cust.592         suspended        1.0     default    
+arr_cust4.593        suspended        1.0     default    
+arr_cust4.594        suspended        1.0     default    
+arr_cust4.595        suspended        1.0     default    
+arr_cust4.596        suspended        1.0     default    
+arr_cust4.597        suspended        1.0     default    
+arr_cust4.598        suspended        1.0     default    
+arr_cust3.599        suspended        1.0     default    
+arr_cust3.600        suspended        1.0     default    
+arr_cust4.601        suspended        1.0     default    
+arr_cust4.602        suspended        1.0     default    
+dep_cust.603         suspended        1.0     default    
+dep_cust.604         suspended        1.0     default    
+dep_cust.605         suspended        1.0     default    
+dep_cust.606         suspended        1.0     default    
+dep_cust.607         suspended        1.0     default    
+arr_cust1.608        suspended        1.0     default    
+arr_cust1.609        suspended        1.0     default    
+arr_cust1.610        suspended        1.0     default    
+arr_cust1.611        suspended        1.0     default    
+arr_cust1.612        suspended        1.0     default    
+arr_cust4.613        suspended        1.0     default    
+arr_cust4.614        suspended        1.0     default    
+arr_cust3.615        suspended        1.0     default    
+arr_cust1.616        suspended        1.0     default    
+arr_cust1.617        suspended        1.0     default    
+arr_cust2.618        suspended        1.0     default    
+arr_cust4.619        suspended        1.0     default    
+dep_cust.620         suspended        1.0     default    
+dep_cust.621         suspended        1.0     default    
+dep_cust.622         suspended        1.0     default    
+dep_cust.623         suspended        1.0     default    
+dep_cust.624         suspended        1.0     default    
+dep_cust.625         suspended        1.0     default    
+dep_cust.626         suspended        1.0     default    
+arr_cust1.627        suspended        1.0     default    
+arr_cust1.628        suspended        1.0     default    
+dep_cust.629         suspended        1.0     default    
+dep_cust.630         suspended        1.0     default    
+dep_cust.631         suspended        1.0     default    
+dep_cust.632         suspended        1.0     default    
+dep_cust.633         suspended        1.0     default    
+dep_cust.634         suspended        1.0     default    
+dep_cust.635         suspended        1.0     default    
+arr_cust4.636        suspended        1.0     default    
+arr_cust4.637        suspended        1.0     default    
+arr_cust4.638        suspended        1.0     default    
+arr_cust4.639        suspended        1.0     default    
+arr_cust1.640        suspended        1.0     default    
+arr_cust1.641        suspended        1.0     default    
+arr_cust1.642        suspended        1.0     default    
+arr_cust1.643        suspended        1.0     default    
+arr_cust1.644        suspended        1.0     default    
+arr_cust3.645        suspended        1.0     default    
+arr_cust3.646        suspended        1.0     default    
+arr_cust3.647        suspended        1.0     default    
+arr_cust3.648        suspended        1.0     default    
+arr_cust3.649        suspended        1.0     default    
+dep_cust.650         suspended        1.0     default    
+dep_cust.651         suspended        1.0     default    
+arr_cust1.652        suspended        1.0     default    
+arr_cust3.653        suspended        1.0     default    
+arr_cust3.654        suspended        1.0     default    
+arr_cust3.655        suspended        1.0     default    
+arr_cust3.656        suspended        1.0     default    
+arr_cust3.657        suspended        1.0     default    
+arr_cust3.658        suspended        1.0     default    
+arr_cust3.659        suspended        1.0     default    
+arr_cust4.660        suspended        1.0     default    
+arr_cust4.661        suspended        1.0     default    
+arr_cust4.662        suspended        1.0     default    
+arr_cust4.663        suspended        1.0     default    
+arr_cust4.664        suspended        1.0     default    
+dep_cust.665         suspended        1.0     default    
+dep_cust.666         suspended        1.0     default    
+dep_cust.667         suspended        1.0     default    
+dep_cust.668         suspended        1.0     default    
+dep_cust.669         suspended        1.0     default    
+arr_cust2.670        suspended        1.0     default    
+arr_cust3.671        suspended        1.0     default    
+arr_cust4.672        suspended        1.0     default    
+arr_cust4.673        suspended        1.0     default    
+arr_cust4.674        suspended        1.0     default    
+arr_cust4.675        suspended        1.0     default    
+arr_cust4.676        suspended        1.0     default    
+arr_cust3.677        suspended        1.0     default    
+arr_cust3.678        suspended        1.0     default    
+arr_cust3.679        suspended        1.0     default    
+arr_cust3.680        suspended        1.0     default    
+arr_cust3.681        suspended        1.0     default    
+dep_cust.682         suspended        1.0     default    
+dep_cust.683         suspended        1.0     default    
+dep_cust.684         suspended        1.0     default    
+arr_cust1.685        suspended        1.0     default    
+arr_cust1.686        suspended        1.0     default    
+arr_cust4.687        suspended        1.0     default    
+arr_cust4.688        suspended        1.0     default    
+arr_cust4.689        suspended        1.0     default    
+arr_cust4.690        suspended        1.0     default    
+arr_cust4.691        suspended        1.0     default    
+dep_cust.692         suspended        1.0     default    
+dep_cust.693         suspended        1.0     default    
+arr_cust4.694        suspended        1.0     default    
+arr_cust4.695        suspended        1.0     default    
+arr_cust4.696        suspended        1.0     default    
+arr_cust4.697        suspended        1.0     default    
+arr_cust4.698        suspended        1.0     default    
+arr_cust4.699        suspended        1.0     default    
+arr_cust4.700        suspended        1.0     default    
+arr_cust4.701        suspended        1.0     default    
+arr_cust4.702        suspended        1.0     default    
+arr_cust4.703        suspended        1.0     default    
+arr_cust4.704        suspended        1.0     default    
+arr_cust4.705        suspended        1.0     default    
+arr_cust4.706        suspended        1.0     default    
+dep_cust.707         suspended        1.0     default    
+arr_cust3.708        suspended        1.0     default    
+arr_cust3.709        suspended        1.0     default    
+arr_cust3.710        suspended        1.0     default    
+arr_cust3.711        suspended        1.0     default    
+arr_cust3.712        suspended        1.0     default    
+dep_cust.713         suspended        1.0     default    
+dep_cust.714         suspended        1.0     default    
+dep_cust.715         suspended        1.0     default    
+dep_cust.716         suspended        1.0     default    
+dep_cust.717         suspended        1.0     default    
+arr_cust3.718        suspended        1.0     default    
+arr_cust3.719        suspended        1.0     default    
+arr_cust2.720        suspended        1.0     default    
+arr_cust2.721        suspended        1.0     default    
+arr_cust1.722        suspended        1.0     default    
+arr_cust1.723        suspended        1.0     default    
+arr_cust1.724        suspended        1.0     default    
+arr_cust1.725        suspended        1.0     default    
+dep_cust.726         suspended        1.0     default    
+dep_cust.727         suspended        1.0     default    
+arr_cust1.728        suspended        1.0     default    
+arr_cust1.729        suspended        1.0     default    
+arr_cust1.730        suspended        1.0     default    
+arr_cust1.731        suspended        1.0     default    
+arr_cust1.732        suspended        1.0     default    
+arr_cust4.733        suspended        1.0     default    
+arr_cust4.734        suspended        1.0     default    
+dep_cust.735         suspended        1.0     default    
+dep_cust.736         suspended        1.0     default    
+arr_cust1.737        suspended        1.0     default    
+arr_cust1.738        suspended        1.0     default    
+arr_cust1.739        suspended        1.0     default    
+arr_cust1.740        suspended        1.0     default    
+arr_cust1.741        suspended        1.0     default    
+dep_cust.742         suspended        1.0     default    
+arr_cust4.743        suspended        1.0     default    
+dep_cust.744         suspended        1.0     default    
+dep_cust.745         suspended        1.0     default    
+arr_cust1.746        suspended        1.0     default    
+arr_cust1.747        suspended        1.0     default    
+arr_cust2.748        suspended        1.0     default    
+arr_cust2.749        suspended        1.0     default    
+arr_cust4.750        suspended        1.0     default    
+arr_cust4.751        suspended        1.0     default    
+arr_cust4.752        suspended        1.0     default    
+arr_cust4.753        suspended        1.0     default    
+arr_cust4.754        suspended        1.0     default    
+dep_cust.755         suspended        1.0     default    
+dep_cust.756         suspended        1.0     default    
+arr_cust4.757        suspended        1.0     default    
+arr_cust4.758        suspended        1.0     default    
+arr_cust4.759        suspended        1.0     default    
+arr_cust4.760        suspended        1.0     default    
+arr_cust4.761        suspended        1.0     default    
+arr_cust3.762        suspended        1.0     default    
+arr_cust3.763        suspended        1.0     default    
+arr_cust3.764        suspended        1.0     default    
+arr_cust3.765        suspended        1.0     default    
+arr_cust3.766        suspended        1.0     default    
+arr_cust3.767        suspended        1.0     default    
+arr_cust3.768        suspended        1.0     default    
+arr_cust3.769        suspended        1.0     default    
+arr_cust3.770        suspended        1.0     default    
+arr_cust3.771        suspended        1.0     default    
+arr_cust3.772        suspended        1.0     default    
+arr_cust3.773        suspended        1.0     default    
+arr_cust3.774        suspended        1.0     default    
+arr_cust1.775        suspended        1.0     default    
+arr_cust1.776        suspended        1.0     default    
+arr_cust3.777        suspended        1.0     default    
+arr_cust3.778        suspended        1.0     default    
+arr_cust3.779        suspended        1.0     default    
+arr_cust3.780        suspended        1.0     default    
+arr_cust3.781        suspended        1.0     default    
+arr_cust2.782        suspended        1.0     default    
+arr_cust2.783        suspended        1.0     default    
+arr_cust1.784        suspended        1.0     default    
+dep_cust.785         suspended        1.0     default    
+dep_cust.786         suspended        1.0     default    
+arr_cust3.787        suspended        1.0     default    
+arr_cust3.788        suspended        1.0     default    
+arr_cust3.789        suspended        1.0     default    
+arr_cust3.790        suspended        1.0     default    
+arr_cust3.791        suspended        1.0     default    
+arr_cust4.792        suspended        1.0     default    
+arr_cust4.793        suspended        1.0     default    
+arr_cust1.794        suspended        1.0     default    
+arr_cust2.795        suspended        1.0     default    
+arr_cust2.796        suspended        1.0     default    
+arr_cust2.797        suspended        1.0     default    
+arr_cust2.798        suspended        1.0     default    
+arr_cust2.799        suspended        1.0     default    
+arr_cust2.800        suspended        1.0     default    
+arr_cust2.801        suspended        1.0     default    
+arr_cust2.802        suspended        1.0     default    
+arr_cust2.803        suspended        1.0     default    
+arr_cust2.804        suspended        1.0     default    
+dep_cust.805         suspended        1.0     default    
+dep_cust.806         suspended        1.0     default    
+dep_cust.807         suspended        1.0     default    
+dep_cust.808         suspended        1.0     default    
+dep_cust.809         suspended        1.0     default    
+arr_cust2.810        suspended        1.0     default    
+arr_cust2.811        suspended        1.0     default    
+arr_cust2.812        suspended        1.0     default    
+arr_cust2.813        suspended        1.0     default    
+arr_cust2.814        suspended        1.0     default    
+arr_cust1.815        suspended        1.0     default    
+arr_cust1.816        suspended        1.0     default    
+arr_cust1.817        suspended        1.0     default    
+arr_cust1.818        suspended        1.0     default    
+arr_cust1.819        suspended        1.0     default    
+arr_cust4.820        suspended        1.0     default    
+dep_cust.821         suspended        1.0     default    
+arr_cust2.822        suspended        1.0     default    
+arr_cust2.823        suspended        1.0     default    
+arr_cust2.824        suspended        1.0     default    
+arr_cust2.825        suspended        1.0     default    
+arr_cust2.826        suspended        1.0     default    
+dep_cust.827         suspended        1.0     default    
+dep_cust.828         suspended        1.0     default    
+arr_cust1.829        suspended        1.0     default    
+arr_cust1.830        suspended        1.0     default    
+arr_cust2.831        suspended        1.0     default    
+arr_cust1.832        suspended        1.0     default    
+arr_cust1.833        suspended        1.0     default    
+arr_cust1.834        suspended        1.0     default    
+arr_cust1.835        suspended        1.0     default    
+arr_cust1.836        suspended        1.0     default    
+dep_cust.837         suspended        1.0     default    
+dep_cust.838         suspended        1.0     default    
+dep_cust.839         suspended        1.0     default    
+dep_cust.840         suspended        1.0     default    
+dep_cust.841         suspended        1.0     default    
+arr_cust4.842        suspended        1.0     default    
+arr_cust4.843        suspended        1.0     default    
+arr_cust4.844        suspended        1.0     default    
+arr_cust4.845        suspended        1.0     default    
+arr_cust4.846        suspended        1.0     default    
+arr_cust3.847        suspended        1.0     default    
+dep_cust.848         suspended        1.0     default    
+arr_cust3.849        suspended        1.0     default    
+arr_cust3.850        suspended        1.0     default    
+dep_cust.851         suspended        1.0     default    
+dep_cust.852         suspended        1.0     default    
+arr_cust1.853        suspended        1.0     default    
+arr_cust1.854        suspended        1.0     default    
+arr_cust1.855        suspended        1.0     default    
+arr_cust1.856        suspended        1.0     default    
+arr_cust1.857        suspended        1.0     default    
+arr_cust1.858        suspended        1.0     default    
+arr_cust1.859        suspended        1.0     default    
+arr_cust1.860        suspended        1.0     default    
+arr_cust1.861        suspended        1.0     default    
+arr_cust1.862        suspended        1.0     default    
+arr_cust2.863        suspended        1.0     default    
+dep_cust.864         suspended        1.0     default    
+dep_cust.865         suspended        1.0     default    
+arr_cust3.866        suspended        1.0     default    
+arr_cust2.867        suspended        1.0     default    
+arr_cust2.868        suspended        1.0     default    
+arr_cust1.869        suspended        1.0     default    
+arr_cust1.870        suspended        1.0     default    
+arr_cust1.871        suspended        1.0     default    
+arr_cust1.872        suspended        1.0     default    
+arr_cust1.873        suspended        1.0     default    
+arr_cust1.874        suspended        1.0     default    
+arr_cust3.875        suspended        1.0     default    
+arr_cust1.876        suspended        1.0     default    
+arr_cust1.877        suspended        1.0     default    
+arr_cust3.878        suspended        1.0     default    
+arr_cust4.879        suspended        1.0     default    
+arr_cust1.880        suspended        1.0     default    
+arr_cust1.881        suspended        1.0     default    
+arr_cust4.882        suspended        1.0     default    
+arr_cust4.883        suspended        1.0     default    
+arr_cust2.884        suspended        1.0     default    
+arr_cust1.885        suspended        1.0     default    
+arr_cust1.886        suspended        1.0     default    
+arr_cust1.887        suspended        1.0     default    
+arr_cust1.888        suspended        1.0     default    
+arr_cust1.889        suspended        1.0     default    
+dep_cust.890         suspended        1.0     default    
+arr_cust4.891        suspended        1.0     default    
+arr_cust4.892        suspended        1.0     default    
+arr_cust4.893        suspended        1.0     default    
+arr_cust4.894        suspended        1.0     default    
+arr_cust4.895        suspended        1.0     default    
+dep_cust.896         suspended        1.0     default    
+dep_cust.897         suspended        1.0     default    
+dep_cust.898         suspended        1.0     default    
+dep_cust.899         suspended        1.0     default    
+dep_cust.900         suspended        1.0     default    
+dep_cust.901         suspended        1.0     default    
+dep_cust.902         suspended        1.0     default    
+dep_cust.903         suspended        1.0     default    
+dep_cust.904         suspended        1.0     default    
+dep_cust.905         suspended        1.0     default    
+arr_cust2.906        suspended        1.0     default    
+arr_cust2.907        suspended        1.0     default    
+arr_cust2.908        suspended        1.0     default    
+dep_cust.909         suspended        1.0     default    
+arr_cust2.910        suspended        1.0     default    
+arr_cust2.911        suspended        1.0     default    
+arr_cust4.912        suspended        1.0     default    
+arr_cust2.913        suspended        1.0     default    
+arr_cust2.914        suspended        1.0     default    
+arr_cust2.915        suspended        1.0     default    
+arr_cust1.916        suspended        1.0     default    
+dep_cust.917         suspended        1.0     default    
+dep_cust.918         suspended        1.0     default    
+dep_cust.919         suspended        1.0     default    
+dep_cust.920         suspended        1.0     default    
+dep_cust.921         suspended        1.0     default    
+arr_cust2.922        suspended        1.0     default    
+arr_cust2.923        suspended        1.0     default    
+dep_cust.924         suspended        1.0     default    
+dep_cust.925         suspended        1.0     default    
+arr_cust1.926        suspended        1.0     default    
+arr_cust1.927        suspended        1.0     default    
+arr_cust1.928        suspended        1.0     default    
+arr_cust1.929        suspended        1.0     default    
+arr_cust1.930        suspended        1.0     default    
+arr_cust1.931        suspended        1.0     default    
+arr_cust1.932        suspended        1.0     default    
+arr_cust2.933        suspended        1.0     default    
+arr_cust2.934        suspended        1.0     default    
+arr_cust2.935        suspended        1.0     default    
+arr_cust2.936        suspended        1.0     default    
+arr_cust2.937        suspended        1.0     default    
+arr_cust2.938        suspended        1.0     default    
+arr_cust3.939        suspended        1.0     default    
+arr_cust2.940        suspended        1.0     default    
+arr_cust1.941        suspended        1.0     default    
+arr_cust1.942        suspended        1.0     default    
+arr_cust1.943        suspended        1.0     default    
+arr_cust1.944        suspended        1.0     default    
+arr_cust1.945        suspended        1.0     default    
+arr_cust3.946        suspended        1.0     default    
+arr_cust3.947        suspended        1.0     default    
+arr_cust3.948        suspended        1.0     default    
+arr_cust3.949        suspended        1.0     default    
+arr_cust3.950        suspended        1.0     default    
+arr_cust1.951        suspended        1.0     default    
+arr_cust1.952        suspended        1.0     default    
+arr_cust2.953        suspended        1.0     default    
+arr_cust2.954        suspended        1.0     default    
+dep_cust.955         suspended        1.0     default    
+dep_cust.956         suspended        1.0     default    
+dep_cust.957         suspended        1.0     default    
+arr_cust3.958        suspended        1.0     default    
+arr_cust3.959        suspended        1.0     default    
+dep_cust.960         suspended        1.0     default    
+dep_cust.961         suspended        1.0     default    
+dep_cust.962         suspended        1.0     default    
+dep_cust.963         suspended        1.0     default    
+dep_cust.964         suspended        1.0     default    
+arr_cust2.965        suspended        1.0     default    
+arr_cust2.966        suspended        1.0     default    
+arr_cust4.967        suspended        1.0     default    
+arr_cust4.968        suspended        1.0     default    
+arr_cust1.969        suspended        1.0     default    
+arr_cust1.970        suspended        1.0     default    
+arr_cust1.971        suspended        1.0     default    
+arr_cust2.972        suspended        1.0     default    
+arr_cust2.973        suspended        1.0     default    
+dep_cust.974         suspended        1.0     default    
+dep_cust.975         suspended        1.0     default    
+dep_cust.976         suspended        1.0     default    
+dep_cust.977         suspended        1.0     default    
+dep_cust.978         suspended        1.0     default    
+arr_cust4.979        suspended        1.0     default    
+arr_cust4.980        suspended        1.0     default    
+arr_cust4.981        suspended        1.0     default    
+arr_cust4.982        suspended        1.0     default    
+arr_cust2.983        suspended        1.0     default    
+arr_cust2.984        suspended        1.0     default    
+arr_cust4.985        suspended        1.0     default    
+arr_cust4.986        suspended        1.0     default    
+arr_cust4.987        suspended        1.0     default    
+arr_cust4.988        suspended        1.0     default    
+arr_cust4.989        suspended        1.0     default    
+arr_cust1.990        suspended        1.0     default    
+arr_cust1.991        suspended        1.0     default    
+arr_cust1.992        suspended        1.0     default    
+arr_cust1.993        suspended        1.0     default    
+arr_cust1.994        suspended        1.0     default    
+arr_cust2.995        suspended        1.0     default    
+arr_cust2.996        suspended        1.0     default    
+arr_cust2.997        suspended        1.0     default    
+arr_cust2.998        suspended        1.0     default    
+arr_cust2.999        suspended        1.0     default    
+dep_cust.1000        suspended        1.0     default    
+                                                                                
+STATUS OF FACILITIES 
+
+                busy     queue  
+name.id        servers   length        processes
+--------------------------------------------------------------------------------
+Curb[0].6       1 of 1    210    serv: dep_cust.14                              
+                                queue: dep_cust.15   dep_cust.37   dep_cust.38  
+                                       dep_cust.39   dep_cust.40   dep_cust.41  
+                                       dep_cust.42   dep_cust.43   dep_cust.44  
+                                       dep_cust.45   dep_cust.46   dep_cust.47  
+                                       dep_cust.48   dep_cust.53   dep_cust.54  
+                                       dep_cust.55   dep_cust.56   dep_cust.57  
+                                       dep_cust.66   dep_cust.67   dep_cust.79  
+                                       dep_cust.80   dep_cust.108  dep_cust.109 
+                                       dep_cust.110  dep_cust.111  dep_cust.112 
+                                       dep_cust.119  dep_cust.120  dep_cust.121 
+                                       dep_cust.122  dep_cust.123  dep_cust.131 
+                                       dep_cust.152  dep_cust.153  dep_cust.154 
+                                       dep_cust.155  dep_cust.156  dep_cust.162 
+                                       dep_cust.163  dep_cust.194  dep_cust.195 
+                                       dep_cust.228  dep_cust.229  dep_cust.238 
+                                       dep_cust.239  dep_cust.242  dep_cust.243 
+                                       dep_cust.246  dep_cust.247  dep_cust.263 
+                                       dep_cust.264  dep_cust.279  dep_cust.280 
+                                       dep_cust.281  dep_cust.282  dep_cust.283 
+                                       dep_cust.288  dep_cust.289  dep_cust.307 
+                                       dep_cust.308  dep_cust.315  dep_cust.316 
+                                       dep_cust.321  dep_cust.327  dep_cust.328 
+                                       dep_cust.329  dep_cust.330  dep_cust.331 
+                                       dep_cust.337  dep_cust.356  dep_cust.369 
+                                       dep_cust.370  dep_cust.371  dep_cust.377 
+                                       dep_cust.393  dep_cust.394  dep_cust.395 
+                                       dep_cust.396  dep_cust.397  dep_cust.398 
+                                       dep_cust.399  dep_cust.400  dep_cust.401 
+                                       dep_cust.402  dep_cust.403  dep_cust.409 
+                                       dep_cust.415  dep_cust.416  dep_cust.439 
+                                       dep_cust.440  dep_cust.448  dep_cust.449 
+                                       dep_cust.450  dep_cust.451  dep_cust.452 
+                                       dep_cust.484  dep_cust.507  dep_cust.533 
+                                       dep_cust.534  dep_cust.547  dep_cust.548 
+                                       dep_cust.577  dep_cust.578  dep_cust.584 
+                                       dep_cust.585  dep_cust.586  dep_cust.588 
+                                       dep_cust.589  dep_cust.590  dep_cust.591 
+                                       dep_cust.592  dep_cust.603  dep_cust.604 
+                                       dep_cust.605  dep_cust.606  dep_cust.607 
+                                       dep_cust.620  dep_cust.621  dep_cust.622 
+                                       dep_cust.623  dep_cust.624  dep_cust.625 
+                                       dep_cust.626  dep_cust.629  dep_cust.630 
+                                       dep_cust.631  dep_cust.632  dep_cust.633 
+                                       dep_cust.634  dep_cust.635  dep_cust.650 
+                                       dep_cust.651  dep_cust.665  dep_cust.666 
+                                       dep_cust.667  dep_cust.668  dep_cust.669 
+                                       dep_cust.682  dep_cust.683  dep_cust.684 
+                                       dep_cust.692  dep_cust.693  dep_cust.707 
+                                       dep_cust.713  dep_cust.714  dep_cust.715 
+                                       dep_cust.716  dep_cust.717  dep_cust.726 
+                                       dep_cust.727  dep_cust.735  dep_cust.736 
+                                       dep_cust.742  dep_cust.744  dep_cust.745 
+                                       dep_cust.755  dep_cust.756  dep_cust.785 
+                                       dep_cust.786  dep_cust.805  dep_cust.806 
+                                       dep_cust.807  dep_cust.808  dep_cust.809 
+                                       dep_cust.821  dep_cust.827  dep_cust.828 
+                                       dep_cust.837  dep_cust.838  dep_cust.839 
+                                       dep_cust.840  dep_cust.841  dep_cust.848 
+                                       dep_cust.851  dep_cust.852  dep_cust.864 
+                                       dep_cust.865  dep_cust.890  dep_cust.896 
+                                       dep_cust.897  dep_cust.898  dep_cust.899 
+                                       dep_cust.900  dep_cust.901  dep_cust.902 
+                                       dep_cust.903  dep_cust.904  dep_cust.905 
+                                       dep_cust.909  dep_cust.917  dep_cust.918 
+                                       dep_cust.919  dep_cust.920  dep_cust.921 
+                                       dep_cust.924  dep_cust.925  dep_cust.955 
+                                       dep_cust.956  dep_cust.957  dep_cust.960 
+                                       dep_cust.961  dep_cust.962  dep_cust.963 
+                                       dep_cust.964  dep_cust.974  dep_cust.975 
+                                       dep_cust.976  dep_cust.977  dep_cust.978 
+Curb[1].7       1 of 1    207    serv: arr_cust1.30                             
+                                queue: arr_cust1.31  arr_cust1.32  arr_cust1.33 
+                                       arr_cust1.34  arr_cust1.49  arr_cust1.50 
+                                       arr_cust1.68  arr_cust1.69  arr_cust1.70 
+                                       arr_cust1.71  arr_cust1.72  arr_cust1.73 
+                                       arr_cust1.87  arr_cust1.88  arr_cust1.89 
+                                       arr_cust1.90  arr_cust1.91  arr_cust1.94 
+                                       arr_cust1.102 arr_cust1.103 arr_cust1.137
+                                       arr_cust1.164 arr_cust1.165 arr_cust1.177
+                                       arr_cust1.178 arr_cust1.179 arr_cust1.180
+                                       arr_cust1.181 arr_cust1.192 arr_cust1.193
+                                       arr_cust1.209 arr_cust1.210 arr_cust1.211
+                                       arr_cust1.212 arr_cust1.213 arr_cust1.221
+                                       arr_cust1.230 arr_cust1.231 arr_cust1.248
+                                       arr_cust1.249 arr_cust1.265 arr_cust1.269
+                                       arr_cust1.286 arr_cust1.287 arr_cust1.309
+                                       arr_cust1.310 arr_cust1.311 arr_cust1.338
+                                       arr_cust1.339 arr_cust1.340 arr_cust1.341
+                                       arr_cust1.342 arr_cust1.343 arr_cust1.344
+                                       arr_cust1.345 arr_cust1.346 arr_cust1.347
+                                       arr_cust1.379 arr_cust1.380 arr_cust1.381
+                                       arr_cust1.382 arr_cust1.383 arr_cust1.384
+                                       arr_cust1.390 arr_cust1.404 arr_cust1.419
+                                       arr_cust1.420 arr_cust1.421 arr_cust1.422
+                                       arr_cust1.423 arr_cust1.424 arr_cust1.431
+                                       arr_cust1.432 arr_cust1.433 arr_cust1.434
+                                       arr_cust1.435 arr_cust1.437 arr_cust1.438
+                                       arr_cust1.441 arr_cust1.442 arr_cust1.443
+                                       arr_cust1.444 arr_cust1.445 arr_cust1.453
+                                       arr_cust1.454 arr_cust1.455 arr_cust1.456
+                                       arr_cust1.457 arr_cust1.477 arr_cust1.503
+                                       arr_cust1.504 arr_cust1.505 arr_cust1.506
+                                       arr_cust1.527 arr_cust1.528 arr_cust1.529
+                                       arr_cust1.546 arr_cust1.554 arr_cust1.555
+                                       arr_cust1.556 arr_cust1.557 arr_cust1.558
+                                       arr_cust1.559 arr_cust1.560 arr_cust1.576
+                                       arr_cust1.579 arr_cust1.580 arr_cust1.581
+                                       arr_cust1.582 arr_cust1.583 arr_cust1.608
+                                       arr_cust1.609 arr_cust1.610 arr_cust1.611
+                                       arr_cust1.612 arr_cust1.616 arr_cust1.617
+                                       arr_cust1.627 arr_cust1.628 arr_cust1.640
+                                       arr_cust1.641 arr_cust1.642 arr_cust1.643
+                                       arr_cust1.644 arr_cust1.652 arr_cust1.685
+                                       arr_cust1.686 arr_cust1.722 arr_cust1.723
+                                       arr_cust1.724 arr_cust1.725 arr_cust1.728
+                                       arr_cust1.729 arr_cust1.730 arr_cust1.731
+                                       arr_cust1.732 arr_cust1.737 arr_cust1.738
+                                       arr_cust1.739 arr_cust1.740 arr_cust1.741
+                                       arr_cust1.746 arr_cust1.747 arr_cust1.775
+                                       arr_cust1.776 arr_cust1.784 arr_cust1.794
+                                       arr_cust1.815 arr_cust1.816 arr_cust1.817
+                                       arr_cust1.818 arr_cust1.819 arr_cust1.829
+                                       arr_cust1.830 arr_cust1.832 arr_cust1.833
+                                       arr_cust1.834 arr_cust1.835 arr_cust1.836
+                                       arr_cust1.853 arr_cust1.854 arr_cust1.855
+                                       arr_cust1.856 arr_cust1.857 arr_cust1.858
+                                       arr_cust1.859 arr_cust1.860 arr_cust1.861
+                                       arr_cust1.862 arr_cust1.869 arr_cust1.870
+                                       arr_cust1.871 arr_cust1.872 arr_cust1.873
+                                       arr_cust1.874 arr_cust1.876 arr_cust1.877
+                                       arr_cust1.880 arr_cust1.881 arr_cust1.885
+                                       arr_cust1.886 arr_cust1.887 arr_cust1.888
+                                       arr_cust1.889 arr_cust1.916 arr_cust1.926
+                                       arr_cust1.927 arr_cust1.928 arr_cust1.929
+                                       arr_cust1.930 arr_cust1.931 arr_cust1.932
+                                       arr_cust1.941 arr_cust1.942 arr_cust1.943
+                                       arr_cust1.944 arr_cust1.945 arr_cust1.951
+                                       arr_cust1.952 arr_cust1.969 arr_cust1.970
+                                       arr_cust1.971 arr_cust1.990 arr_cust1.991
+                                       arr_cust1.992 arr_cust1.993 arr_cust1.994
+Curb[2].8       1 of 1    180    serv: arr_cust2.20                             
+                                queue: arr_cust2.21  arr_cust2.27  arr_cust2.35 
+                                       arr_cust2.36  arr_cust2.51  arr_cust2.52 
+                                       arr_cust2.81  arr_cust2.82  arr_cust2.83 
+                                       arr_cust2.84  arr_cust2.85  arr_cust2.95 
+                                       arr_cust2.96  arr_cust2.97  arr_cust2.98 
+                                       arr_cust2.104 arr_cust2.105 arr_cust2.107
+                                       arr_cust2.126 arr_cust2.127 arr_cust2.128
+                                       arr_cust2.129 arr_cust2.130 arr_cust2.150
+                                       arr_cust2.151 arr_cust2.157 arr_cust2.158
+                                       arr_cust2.159 arr_cust2.160 arr_cust2.161
+                                       arr_cust2.175 arr_cust2.182 arr_cust2.183
+                                       arr_cust2.184 arr_cust2.185 arr_cust2.186
+                                       arr_cust2.199 arr_cust2.200 arr_cust2.201
+                                       arr_cust2.202 arr_cust2.203 arr_cust2.214
+                                       arr_cust2.215 arr_cust2.216 arr_cust2.217
+                                       arr_cust2.218 arr_cust2.223 arr_cust2.226
+                                       arr_cust2.227 arr_cust2.232 arr_cust2.271
+                                       arr_cust2.272 arr_cust2.275 arr_cust2.276
+                                       arr_cust2.312 arr_cust2.353 arr_cust2.354
+                                       arr_cust2.362 arr_cust2.363 arr_cust2.364
+                                       arr_cust2.365 arr_cust2.366 arr_cust2.367
+                                       arr_cust2.368 arr_cust2.378 arr_cust2.405
+                                       arr_cust2.406 arr_cust2.407 arr_cust2.417
+                                       arr_cust2.418 arr_cust2.426 arr_cust2.427
+                                       arr_cust2.428 arr_cust2.429 arr_cust2.430
+                                       arr_cust2.446 arr_cust2.447 arr_cust2.458
+                                       arr_cust2.459 arr_cust2.461 arr_cust2.462
+                                       arr_cust2.478 arr_cust2.479 arr_cust2.480
+                                       arr_cust2.481 arr_cust2.482 arr_cust2.487
+                                       arr_cust2.493 arr_cust2.494 arr_cust2.510
+                                       arr_cust2.511 arr_cust2.512 arr_cust2.513
+                                       arr_cust2.514 arr_cust2.515 arr_cust2.516
+                                       arr_cust2.517 arr_cust2.518 arr_cust2.519
+                                       arr_cust2.520 arr_cust2.521 arr_cust2.522
+                                       arr_cust2.523 arr_cust2.524 arr_cust2.530
+                                       arr_cust2.535 arr_cust2.536 arr_cust2.549
+                                       arr_cust2.550 arr_cust2.551 arr_cust2.552
+                                       arr_cust2.553 arr_cust2.564 arr_cust2.565
+                                       arr_cust2.566 arr_cust2.567 arr_cust2.568
+                                       arr_cust2.618 arr_cust2.670 arr_cust2.720
+                                       arr_cust2.721 arr_cust2.748 arr_cust2.749
+                                       arr_cust2.782 arr_cust2.783 arr_cust2.795
+                                       arr_cust2.796 arr_cust2.797 arr_cust2.798
+                                       arr_cust2.799 arr_cust2.800 arr_cust2.801
+                                       arr_cust2.802 arr_cust2.803 arr_cust2.804
+                                       arr_cust2.810 arr_cust2.811 arr_cust2.812
+                                       arr_cust2.813 arr_cust2.814 arr_cust2.822
+                                       arr_cust2.823 arr_cust2.824 arr_cust2.825
+                                       arr_cust2.826 arr_cust2.831 arr_cust2.863
+                                       arr_cust2.867 arr_cust2.868 arr_cust2.884
+                                       arr_cust2.906 arr_cust2.907 arr_cust2.908
+                                       arr_cust2.910 arr_cust2.911 arr_cust2.913
+                                       arr_cust2.914 arr_cust2.915 arr_cust2.922
+                                       arr_cust2.923 arr_cust2.933 arr_cust2.934
+                                       arr_cust2.935 arr_cust2.936 arr_cust2.937
+                                       arr_cust2.938 arr_cust2.940 arr_cust2.953
+                                       arr_cust2.954 arr_cust2.965 arr_cust2.966
+                                       arr_cust2.972 arr_cust2.973 arr_cust2.983
+                                       arr_cust2.984 arr_cust2.995 arr_cust2.996
+                                       arr_cust2.997 arr_cust2.998 arr_cust2.999
+Curb[3].9       1 of 1    151    serv: arr_cust3.13                             
+                                queue: arr_cust3.61  arr_cust3.62  arr_cust3.63 
+                                       arr_cust3.64  arr_cust3.65  arr_cust3.74 
+                                       arr_cust3.75  arr_cust3.76  arr_cust3.77 
+                                       arr_cust3.78  arr_cust3.92  arr_cust3.99 
+                                       arr_cust3.100 arr_cust3.139 arr_cust3.145
+                                       arr_cust3.146 arr_cust3.147 arr_cust3.148
+                                       arr_cust3.149 arr_cust3.171 arr_cust3.172
+                                       arr_cust3.187 arr_cust3.188 arr_cust3.189
+                                       arr_cust3.190 arr_cust3.191 arr_cust3.196
+                                       arr_cust3.197 arr_cust3.219 arr_cust3.220
+                                       arr_cust3.222 arr_cust3.224 arr_cust3.225
+                                       arr_cust3.240 arr_cust3.241 arr_cust3.244
+                                       arr_cust3.245 arr_cust3.262 arr_cust3.266
+                                       arr_cust3.273 arr_cust3.274 arr_cust3.300
+                                       arr_cust3.301 arr_cust3.302 arr_cust3.303
+                                       arr_cust3.304 arr_cust3.305 arr_cust3.306
+                                       arr_cust3.313 arr_cust3.314 arr_cust3.317
+                                       arr_cust3.318 arr_cust3.357 arr_cust3.358
+                                       arr_cust3.359 arr_cust3.360 arr_cust3.361
+                                       arr_cust3.391 arr_cust3.408 arr_cust3.425
+                                       arr_cust3.436 arr_cust3.467 arr_cust3.468
+                                       arr_cust3.469 arr_cust3.470 arr_cust3.471
+                                       arr_cust3.483 arr_cust3.485 arr_cust3.486
+                                       arr_cust3.497 arr_cust3.500 arr_cust3.501
+                                       arr_cust3.502 arr_cust3.508 arr_cust3.509
+                                       arr_cust3.525 arr_cust3.526 arr_cust3.537
+                                       arr_cust3.538 arr_cust3.561 arr_cust3.569
+                                       arr_cust3.570 arr_cust3.571 arr_cust3.572
+                                       arr_cust3.573 arr_cust3.587 arr_cust3.599
+                                       arr_cust3.600 arr_cust3.615 arr_cust3.645
+                                       arr_cust3.646 arr_cust3.647 arr_cust3.648
+                                       arr_cust3.649 arr_cust3.653 arr_cust3.654
+                                       arr_cust3.655 arr_cust3.656 arr_cust3.657
+                                       arr_cust3.658 arr_cust3.659 arr_cust3.671
+                                       arr_cust3.677 arr_cust3.678 arr_cust3.679
+                                       arr_cust3.680 arr_cust3.681 arr_cust3.708
+                                       arr_cust3.709 arr_cust3.710 arr_cust3.711
+                                       arr_cust3.712 arr_cust3.718 arr_cust3.719
+                                       arr_cust3.762 arr_cust3.763 arr_cust3.764
+                                       arr_cust3.765 arr_cust3.766 arr_cust3.767
+                                       arr_cust3.768 arr_cust3.769 arr_cust3.770
+                                       arr_cust3.771 arr_cust3.772 arr_cust3.773
+                                       arr_cust3.774 arr_cust3.777 arr_cust3.778
+                                       arr_cust3.779 arr_cust3.780 arr_cust3.781
+                                       arr_cust3.787 arr_cust3.788 arr_cust3.789
+                                       arr_cust3.790 arr_cust3.791 arr_cust3.847
+                                       arr_cust3.849 arr_cust3.850 arr_cust3.866
+                                       arr_cust3.875 arr_cust3.878 arr_cust3.939
+                                       arr_cust3.946 arr_cust3.947 arr_cust3.948
+                                       arr_cust3.949 arr_cust3.950 arr_cust3.958
+                                       arr_cust3.959                            
+Curb[4].10      1 of 1    236    serv: arr_cust4.11                             
+                                queue: arr_cust4.12  arr_cust4.16  arr_cust4.17 
+                                       arr_cust4.18  arr_cust4.19  arr_cust4.22 
+                                       arr_cust4.23  arr_cust4.24  arr_cust4.25 
+                                       arr_cust4.26  arr_cust4.28  arr_cust4.29 
+                                       arr_cust4.58  arr_cust4.59  arr_cust4.60 
+                                       arr_cust4.86  arr_cust4.93  arr_cust4.101
+                                       arr_cust4.106 arr_cust4.113 arr_cust4.114
+                                       arr_cust4.115 arr_cust4.116 arr_cust4.117
+                                       arr_cust4.118 arr_cust4.124 arr_cust4.125
+                                       arr_cust4.132 arr_cust4.133 arr_cust4.134
+                                       arr_cust4.135 arr_cust4.136 arr_cust4.138
+                                       arr_cust4.140 arr_cust4.141 arr_cust4.142
+                                       arr_cust4.143 arr_cust4.144 arr_cust4.166
+                                       arr_cust4.167 arr_cust4.168 arr_cust4.169
+                                       arr_cust4.170 arr_cust4.173 arr_cust4.174
+                                       arr_cust4.176 arr_cust4.198 arr_cust4.204
+                                       arr_cust4.205 arr_cust4.206 arr_cust4.207
+                                       arr_cust4.208 arr_cust4.233 arr_cust4.234
+                                       arr_cust4.235 arr_cust4.236 arr_cust4.237
+                                       arr_cust4.250 arr_cust4.251 arr_cust4.252
+                                       arr_cust4.253 arr_cust4.254 arr_cust4.255
+                                       arr_cust4.256 arr_cust4.257 arr_cust4.258
+                                       arr_cust4.259 arr_cust4.260 arr_cust4.261
+                                       arr_cust4.267 arr_cust4.268 arr_cust4.270
+                                       arr_cust4.277 arr_cust4.278 arr_cust4.284
+                                       arr_cust4.285 arr_cust4.290 arr_cust4.291
+                                       arr_cust4.292 arr_cust4.293 arr_cust4.294
+                                       arr_cust4.295 arr_cust4.296 arr_cust4.297
+                                       arr_cust4.298 arr_cust4.299 arr_cust4.319
+                                       arr_cust4.320 arr_cust4.322 arr_cust4.323
+                                       arr_cust4.324 arr_cust4.325 arr_cust4.326
+                                       arr_cust4.332 arr_cust4.333 arr_cust4.334
+                                       arr_cust4.335 arr_cust4.336 arr_cust4.348
+                                       arr_cust4.349 arr_cust4.350 arr_cust4.351
+                                       arr_cust4.352 arr_cust4.355 arr_cust4.372
+                                       arr_cust4.373 arr_cust4.374 arr_cust4.375
+                                       arr_cust4.376 arr_cust4.385 arr_cust4.386
+                                       arr_cust4.387 arr_cust4.388 arr_cust4.389
+                                       arr_cust4.392 arr_cust4.410 arr_cust4.411
+                                       arr_cust4.412 arr_cust4.413 arr_cust4.414
+                                       arr_cust4.460 arr_cust4.463 arr_cust4.464
+                                       arr_cust4.465 arr_cust4.466 arr_cust4.472
+                                       arr_cust4.473 arr_cust4.474 arr_cust4.475
+                                       arr_cust4.476 arr_cust4.488 arr_cust4.489
+                                       arr_cust4.490 arr_cust4.491 arr_cust4.492
+                                       arr_cust4.495 arr_cust4.496 arr_cust4.498
+                                       arr_cust4.499 arr_cust4.531 arr_cust4.532
+                                       arr_cust4.539 arr_cust4.540 arr_cust4.541
+                                       arr_cust4.542 arr_cust4.543 arr_cust4.544
+                                       arr_cust4.545 arr_cust4.562 arr_cust4.563
+                                       arr_cust4.574 arr_cust4.575 arr_cust4.593
+                                       arr_cust4.594 arr_cust4.595 arr_cust4.596
+                                       arr_cust4.597 arr_cust4.598 arr_cust4.601
+                                       arr_cust4.602 arr_cust4.613 arr_cust4.614
+                                       arr_cust4.619 arr_cust4.636 arr_cust4.637
+                                       arr_cust4.638 arr_cust4.639 arr_cust4.660
+                                       arr_cust4.661 arr_cust4.662 arr_cust4.663
+                                       arr_cust4.664 arr_cust4.672 arr_cust4.673
+                                       arr_cust4.674 arr_cust4.675 arr_cust4.676
+                                       arr_cust4.687 arr_cust4.688 arr_cust4.689
+                                       arr_cust4.690 arr_cust4.691 arr_cust4.694
+                                       arr_cust4.695 arr_cust4.696 arr_cust4.697
+                                       arr_cust4.698 arr_cust4.699 arr_cust4.700
+                                       arr_cust4.701 arr_cust4.702 arr_cust4.703
+                                       arr_cust4.704 arr_cust4.705 arr_cust4.706
+                                       arr_cust4.733 arr_cust4.734 arr_cust4.743
+                                       arr_cust4.750 arr_cust4.751 arr_cust4.752
+                                       arr_cust4.753 arr_cust4.754 arr_cust4.757
+                                       arr_cust4.758 arr_cust4.759 arr_cust4.760
+                                       arr_cust4.761 arr_cust4.792 arr_cust4.793
+                                       arr_cust4.820 arr_cust4.842 arr_cust4.843
+                                       arr_cust4.844 arr_cust4.845 arr_cust4.846
+                                       arr_cust4.879 arr_cust4.882 arr_cust4.883
+                                       arr_cust4.891 arr_cust4.892 arr_cust4.893
+                                       arr_cust4.894 arr_cust4.895 arr_cust4.912
+                                       arr_cust4.967 arr_cust4.968 arr_cust4.979
+                                       arr_cust4.980 arr_cust4.981 arr_cust4.982
+                                       arr_cust4.985 arr_cust4.986 arr_cust4.987
+                                       arr_cust4.988 arr_cust4.989              
+rest.11         1 of 1      3    serv: shuttle.8                                
+                                queue: shuttle.9     shuttle.10    shuttle.7    
+shuttle spo.4   0 of 1      0    serv: idle                                     
+shuttle spo.4   0 of 1      0    serv: idle                                     
+shuttle spo.5   0 of 1      0    serv: idle                                     
+shuttle spo.5   0 of 1      0    serv: idle                                     
+shuttle spo.5   0 of 1      0    serv: idle                                     
+                                                                                
+STATUS OF STORAGES 
+
+                            queue  
+name.id        available    length     processes
+--------------------------------------------------------------------------------
+                                                                                
+STATUS OF BUFFERS
+name.id           size  current  qLength processes
+--------------------------------------------------------------------------------
+
+STATUS OF GLOBAL EVENTS
+
+                         counts
+name.id        state   wait/queue      processes
+--------------------------------------------------------------------------------
+evnt_list_e.1   !occ      0/0    wait:
+converged.2     !occ      0/0    wait:
+end batch.3     !occ      0/0    wait:
+sim term.4      !occ      0/0    wait:
+mbs.12          !occ      0/0    wait:
+get_off_now.1   !occ      0/0    wait:
+get_off_now.1   !occ      0/0    wait:
+get_off_now.1   !occ      0/0    wait:
+get_off_now.2   !occ      0/0    wait:
+mbs.21          !occ      0/0    wait:
+got_off[0]..2   !occ      0/0    wait:
+got_off[1]..2   !occ      0/0    wait:
+got_off[2]..2   !occ      0/0    wait:
+got_off[3]..2   !occ      0/0    wait:
+mbs.30          !occ      0/0    wait:
+board shutt.3   !occ      0/1    wait:
+                                queue: dep_cust.14                              
+board shutt.3   !occ      0/1    wait:
+                                queue: arr_cust1.30                             
+board shutt.3   !occ      0/1    wait:
+                                queue: arr_cust2.20                             
+board shutt.3   !occ      0/1    wait:
+                                queue: arr_cust3.13                             
+board shutt.4   !occ      0/1    wait:
+                                queue: arr_cust4.11                             
+boarded.set.4   !occ      0/0    wait:
+boarded[0].42   !occ      0/0    wait:
+boarded[1].43   !occ      0/0    wait:
+boarded[2].44   !occ      0/0    wait:
+boarded[3].45   !occ      0/0    wait:
+call button.4   !occ      0/1    wait:
+                                queue: shuttle.8                                
+                                                                                
+STATUS OF GLOBAL MAILBOXES 
+
+                message    process 
+name.id          count      count      processes
+--------------------------------------------------------------------------------
+get_off_now.1       0          0      
+get_off_now.1       0          0      
+get_off_now.1       0          0      
+get_off_now.1       0          0      
+got_off[0].22       0          0      
+got_off[1].24       0          0      
+got_off[2].26       0          0      
+got_off[3].28       0          0      
+board shutt.3      -1          1       dep_cust.14                              
+board shutt.3      -1          1       arr_cust1.30                             
+board shutt.3      -1          1       arr_cust2.20                             
+board shutt.3      -1          1       arr_cust3.13                             
+board shutt.3      -1          1       arr_cust4.11                             
+call button.4      -1          1       shuttle.8                                
+                                                                                
+STATUS OF EVENT LIST 
+
+position        time         process              event type  
+--------------------------------------------------------------
+    0           69.490726    dep_cust.1000        create      
+    1           69.535467    Terminal 3.5         hold        
+    2           69.956073    Terminal 1.3         hold        
+    3           70.849392    Terminal 4.6         hold        
+    4           70.928999    Terminal 2.4         hold        
+    5         1440.000000    sim.1                hold        
+                                                                                
+~/CS_177/lab4/CS_177_lab4
+ibona001@bolt $ git pull origin master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/IanBonafede/CS_177_lab4
+ * branch            master     -> FETCH_HEAD
+Updating 511cbc9..719a597
+Fast-forward
+ ibona001_lab4.cpp | 1 -
+ 1 file changed, 1 deletion(-)
+~/CS_177/lab4/CS_177_lab4
+ibona001@bolt $ rm ibona001_lab4
+/bin/rm: remove regular file ‘ibona001_lab4’? y
+~/CS_177/lab4/CS_177_lab4
+ibona001@bolt $ make
+g++ --std=c++11 -DCPP -DGPP -I/usr/csshare/pkgs/csim_cpp-19.0/lib -m32 /usr/csshare/pkgs/csim_cpp-19.0/lib/csim.cpp.a -lm -o ibona001_lab4 ibona001_lab4.cpp
+ibona001_lab4.cpp: In function ‘void sim()’:
+ibona001_lab4.cpp:62:49: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+   get_off_now = new mailbox_set("get_off_now", s); // each shuttle has a mailbox for get off now
+                                                 ^
+ibona001_lab4.cpp:63:41: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+   got_off = new mailbox_set("got_off", s); // each shuttle has a mailbox to see if they get off
+                                         ^
+ibona001_lab4.cpp:64:48: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+   hop_on = new mailbox_set("board shuttle", t+1); 
+                                                ^
+g++ --std=c++11 -DCPP -DGPP -I/usr/csshare/pkgs/csim_cpp-19.0/lib -m32 /usr/csshare/pkgs/csim_cpp-19.0/lib/csim.cpp.a -lm -o ibona001_lab5 ibona001_lab5.cpp
+g++: error: ibona001_lab5.cpp: No such file or directory
+make: *** [ibona001_lab5] Error 1
+~/CS_177/lab4/CS_177_lab4
+ibona001@bolt $ ./ibona001_lab4
+Number of terminals: 5
+Number of shuttle busses: 5
+Interarrival mean time: 10
+
+
+***************
+CSIM EXECUTION ERROR 17 DETECTED AT TIME 648.065122
+<<<<<<17. TOO MANY PROCESSES                    
+***************
+
+            C++/CSIM Simulation Report (Version 19.0 for Linux x86)
+
+                           Fri Feb  8 22:01:03 2019
+
+
+                     Ending simulation time:       648.065
+                     Elapsed simulation time:      648.065
+                     CPU time used (seconds):        0.000
+
+
+FACILITY SUMMARY 
+
+facility     service    service          through-    queue     response   compl
+name           disc      time    util.     put       length      time     count
+--------------------------------------------------------------------------------
+Curb[0]      fcfs       0.00000  0.000    0.00000   89.28511    0.00000        0
+Curb[1]      fcfs       0.00000  0.000    0.00000   74.51957    0.00000        0
+Curb[2]      fcfs       0.00000  0.000    0.00000   71.61170    0.00000        0
+Curb[3]      fcfs       0.00000  0.000    0.00000   89.29675    0.00000        0
+Curb[4]      fcfs       0.00000  0.000    0.00000   85.04086    0.00000        0
+Curb[5]      fcfs       0.00000  0.000    0.00000   79.45656    0.00000        0
+rest         fcfs       2.93633  0.027    0.00926    4.00867  432.97974        6
+
+
+
+QTABLE 1:  bus occupancy
+
+      initial       0      minimum       0      mean                    0.000000
+      final         0      maximum       0      variance                0.000000
+      entries       0      range         0      standard deviation      0.000000
+      exits         0                           coeff of variation      0.000000
+
+                                             cumulative
+        number    total time    proportion   proportion
+
+             0     648.06512     1.000000     1.000000   ********************
+             1       0.00000     0.000000     1.000000                       
+
+Model Status: csim_clock = 648.065
+
+STATUS OF PROCESSES 
+
+process              state        priority    class     
+--------------------------------------------------------
+sim.1                suspended        1.0     default    
+Car lot.2            suspended        1.0     default    
+Terminal 1.3         suspended        1.0     default    
+Terminal 2.4         suspended        1.0     default    
+Terminal 3.5         suspended        1.0     default    
+Terminal 4.6         suspended        1.0     default    
+Terminal 5.7         active           1.0     default    
+shuttle.8            suspended        1.0     default    
+shuttle.9            suspended        1.0     default    
+shuttle.10           suspended        1.0     default    
+shuttle.11           suspended        1.0     default    
+shuttle.12           suspended        1.0     default    
+arr_cust4.13         suspended        1.0     default    
+arr_cust4.14         suspended        1.0     default    
+arr_cust4.15         suspended        1.0     default    
+arr_cust4.16         suspended        1.0     default    
+arr_cust4.17         suspended        1.0     default    
+arr_cust3.18         suspended        1.0     default    
+arr_cust3.19         suspended        1.0     default    
+dep_cust.20          suspended        1.0     default    
+arr_cust2.21         suspended        1.0     default    
+arr_cust4.22         suspended        1.0     default    
+arr_cust4.23         suspended        1.0     default    
+arr_cust4.24         suspended        1.0     default    
+arr_cust4.25         suspended        1.0     default    
+arr_cust4.26         suspended        1.0     default    
+dep_cust.27          suspended        1.0     default    
+dep_cust.28          suspended        1.0     default    
+dep_cust.29          suspended        1.0     default    
+dep_cust.30          suspended        1.0     default    
+dep_cust.31          suspended        1.0     default    
+arr_cust1.32         suspended        1.0     default    
+arr_cust1.33         suspended        1.0     default    
+arr_cust1.34         suspended        1.0     default    
+arr_cust1.35         suspended        1.0     default    
+arr_cust1.36         suspended        1.0     default    
+arr_cust5.37         suspended        1.0     default    
+arr_cust5.38         suspended        1.0     default    
+arr_cust5.39         suspended        1.0     default    
+arr_cust5.40         suspended        1.0     default    
+arr_cust5.41         suspended        1.0     default    
+arr_cust1.42         suspended        1.0     default    
+arr_cust1.43         suspended        1.0     default    
+dep_cust.44          suspended        1.0     default    
+dep_cust.45          suspended        1.0     default    
+dep_cust.46          suspended        1.0     default    
+dep_cust.47          suspended        1.0     default    
+arr_cust4.48         suspended        1.0     default    
+arr_cust4.49         suspended        1.0     default    
+arr_cust2.50         suspended        1.0     default    
+arr_cust2.51         suspended        1.0     default    
+arr_cust2.52         suspended        1.0     default    
+arr_cust2.53         suspended        1.0     default    
+arr_cust2.54         suspended        1.0     default    
+arr_cust2.55         suspended        1.0     default    
+arr_cust2.56         suspended        1.0     default    
+arr_cust2.57         suspended        1.0     default    
+arr_cust2.58         suspended        1.0     default    
+arr_cust2.59         suspended        1.0     default    
+arr_cust4.60         suspended        1.0     default    
+arr_cust4.61         suspended        1.0     default    
+arr_cust4.62         suspended        1.0     default    
+arr_cust4.63         suspended        1.0     default    
+arr_cust4.64         suspended        1.0     default    
+arr_cust3.65         suspended        1.0     default    
+arr_cust3.66         suspended        1.0     default    
+arr_cust2.67         suspended        1.0     default    
+arr_cust2.68         suspended        1.0     default    
+arr_cust2.69         suspended        1.0     default    
+arr_cust4.70         suspended        1.0     default    
+arr_cust4.71         suspended        1.0     default    
+arr_cust4.72         suspended        1.0     default    
+arr_cust4.73         suspended        1.0     default    
+arr_cust4.74         suspended        1.0     default    
+dep_cust.75          suspended        1.0     default    
+dep_cust.76          suspended        1.0     default    
+dep_cust.77          suspended        1.0     default    
+dep_cust.78          suspended        1.0     default    
+dep_cust.79          suspended        1.0     default    
+dep_cust.80          suspended        1.0     default    
+arr_cust1.81         suspended        1.0     default    
+arr_cust1.82         suspended        1.0     default    
+arr_cust1.83         suspended        1.0     default    
+arr_cust1.84         suspended        1.0     default    
+arr_cust1.85         suspended        1.0     default    
+arr_cust1.86         suspended        1.0     default    
+arr_cust1.87         suspended        1.0     default    
+arr_cust1.88         suspended        1.0     default    
+arr_cust1.89         suspended        1.0     default    
+arr_cust1.90         suspended        1.0     default    
+arr_cust5.91         suspended        1.0     default    
+arr_cust5.92         suspended        1.0     default    
+arr_cust2.93         suspended        1.0     default    
+arr_cust3.94         suspended        1.0     default    
+arr_cust3.95         suspended        1.0     default    
+arr_cust3.96         suspended        1.0     default    
+arr_cust5.97         suspended        1.0     default    
+arr_cust5.98         suspended        1.0     default    
+dep_cust.99          suspended        1.0     default    
+dep_cust.100         suspended        1.0     default    
+arr_cust5.101        suspended        1.0     default    
+arr_cust5.102        suspended        1.0     default    
+arr_cust2.103        suspended        1.0     default    
+arr_cust2.104        suspended        1.0     default    
+arr_cust4.105        suspended        1.0     default    
+arr_cust4.106        suspended        1.0     default    
+arr_cust5.107        suspended        1.0     default    
+arr_cust5.108        suspended        1.0     default    
+arr_cust5.109        suspended        1.0     default    
+arr_cust5.110        suspended        1.0     default    
+arr_cust5.111        suspended        1.0     default    
+arr_cust2.112        suspended        1.0     default    
+arr_cust2.113        suspended        1.0     default    
+arr_cust4.114        suspended        1.0     default    
+dep_cust.115         suspended        1.0     default    
+dep_cust.116         suspended        1.0     default    
+arr_cust5.117        suspended        1.0     default    
+dep_cust.118         suspended        1.0     default    
+dep_cust.119         suspended        1.0     default    
+dep_cust.120         suspended        1.0     default    
+dep_cust.121         suspended        1.0     default    
+dep_cust.122         suspended        1.0     default    
+arr_cust2.123        suspended        1.0     default    
+arr_cust2.124        suspended        1.0     default    
+arr_cust3.125        suspended        1.0     default    
+arr_cust1.126        suspended        1.0     default    
+arr_cust1.127        suspended        1.0     default    
+arr_cust1.128        suspended        1.0     default    
+arr_cust1.129        suspended        1.0     default    
+arr_cust1.130        suspended        1.0     default    
+arr_cust5.131        suspended        1.0     default    
+arr_cust5.132        suspended        1.0     default    
+arr_cust4.133        suspended        1.0     default    
+arr_cust4.134        suspended        1.0     default    
+arr_cust3.135        suspended        1.0     default    
+arr_cust3.136        suspended        1.0     default    
+arr_cust3.137        suspended        1.0     default    
+arr_cust3.138        suspended        1.0     default    
+arr_cust3.139        suspended        1.0     default    
+dep_cust.140         suspended        1.0     default    
+dep_cust.141         suspended        1.0     default    
+dep_cust.142         suspended        1.0     default    
+dep_cust.143         suspended        1.0     default    
+dep_cust.144         suspended        1.0     default    
+dep_cust.145         suspended        1.0     default    
+dep_cust.146         suspended        1.0     default    
+dep_cust.147         suspended        1.0     default    
+dep_cust.148         suspended        1.0     default    
+dep_cust.149         suspended        1.0     default    
+arr_cust4.150        suspended        1.0     default    
+arr_cust4.151        suspended        1.0     default    
+arr_cust2.152        suspended        1.0     default    
+arr_cust5.153        suspended        1.0     default    
+arr_cust5.154        suspended        1.0     default    
+arr_cust5.155        suspended        1.0     default    
+arr_cust5.156        suspended        1.0     default    
+arr_cust5.157        suspended        1.0     default    
+arr_cust5.158        suspended        1.0     default    
+arr_cust4.159        suspended        1.0     default    
+dep_cust.160         suspended        1.0     default    
+dep_cust.161         suspended        1.0     default    
+dep_cust.162         suspended        1.0     default    
+dep_cust.163         suspended        1.0     default    
+dep_cust.164         suspended        1.0     default    
+arr_cust3.165        suspended        1.0     default    
+arr_cust3.166        suspended        1.0     default    
+arr_cust2.167        suspended        1.0     default    
+arr_cust2.168        suspended        1.0     default    
+arr_cust4.169        suspended        1.0     default    
+arr_cust4.170        suspended        1.0     default    
+arr_cust4.171        suspended        1.0     default    
+arr_cust4.172        suspended        1.0     default    
+arr_cust4.173        suspended        1.0     default    
+arr_cust3.174        suspended        1.0     default    
+arr_cust3.175        suspended        1.0     default    
+arr_cust3.176        suspended        1.0     default    
+arr_cust3.177        suspended        1.0     default    
+arr_cust3.178        suspended        1.0     default    
+arr_cust3.179        suspended        1.0     default    
+arr_cust3.180        suspended        1.0     default    
+arr_cust4.181        suspended        1.0     default    
+arr_cust5.182        suspended        1.0     default    
+arr_cust5.183        suspended        1.0     default    
+arr_cust5.184        suspended        1.0     default    
+arr_cust2.185        suspended        1.0     default    
+dep_cust.186         suspended        1.0     default    
+dep_cust.187         suspended        1.0     default    
+dep_cust.188         suspended        1.0     default    
+dep_cust.189         suspended        1.0     default    
+dep_cust.190         suspended        1.0     default    
+arr_cust1.191        suspended        1.0     default    
+arr_cust1.192        suspended        1.0     default    
+arr_cust5.193        suspended        1.0     default    
+arr_cust5.194        suspended        1.0     default    
+arr_cust5.195        suspended        1.0     default    
+arr_cust5.196        suspended        1.0     default    
+arr_cust5.197        suspended        1.0     default    
+arr_cust4.198        suspended        1.0     default    
+arr_cust4.199        suspended        1.0     default    
+arr_cust4.200        suspended        1.0     default    
+arr_cust4.201        suspended        1.0     default    
+arr_cust4.202        suspended        1.0     default    
+arr_cust3.203        suspended        1.0     default    
+arr_cust3.204        suspended        1.0     default    
+arr_cust5.205        suspended        1.0     default    
+arr_cust2.206        suspended        1.0     default    
+arr_cust2.207        suspended        1.0     default    
+arr_cust3.208        suspended        1.0     default    
+arr_cust3.209        suspended        1.0     default    
+arr_cust3.210        suspended        1.0     default    
+arr_cust3.211        suspended        1.0     default    
+arr_cust3.212        suspended        1.0     default    
+arr_cust5.213        suspended        1.0     default    
+arr_cust5.214        suspended        1.0     default    
+arr_cust4.215        suspended        1.0     default    
+arr_cust4.216        suspended        1.0     default    
+arr_cust4.217        suspended        1.0     default    
+arr_cust3.218        suspended        1.0     default    
+arr_cust3.219        suspended        1.0     default    
+arr_cust5.220        suspended        1.0     default    
+arr_cust5.221        suspended        1.0     default    
+arr_cust5.222        suspended        1.0     default    
+arr_cust5.223        suspended        1.0     default    
+arr_cust5.224        suspended        1.0     default    
+arr_cust4.225        suspended        1.0     default    
+arr_cust4.226        suspended        1.0     default    
+arr_cust3.227        suspended        1.0     default    
+arr_cust3.228        suspended        1.0     default    
+arr_cust1.229        suspended        1.0     default    
+arr_cust1.230        suspended        1.0     default    
+dep_cust.231         suspended        1.0     default    
+dep_cust.232         suspended        1.0     default    
+arr_cust2.233        suspended        1.0     default    
+arr_cust2.234        suspended        1.0     default    
+arr_cust4.235        suspended        1.0     default    
+arr_cust4.236        suspended        1.0     default    
+arr_cust1.237        suspended        1.0     default    
+arr_cust3.238        suspended        1.0     default    
+arr_cust3.239        suspended        1.0     default    
+arr_cust5.240        suspended        1.0     default    
+arr_cust5.241        suspended        1.0     default    
+dep_cust.242         suspended        1.0     default    
+dep_cust.243         suspended        1.0     default    
+arr_cust2.244        suspended        1.0     default    
+arr_cust2.245        suspended        1.0     default    
+arr_cust4.246        suspended        1.0     default    
+arr_cust3.247        suspended        1.0     default    
+arr_cust5.248        suspended        1.0     default    
+arr_cust5.249        suspended        1.0     default    
+arr_cust5.250        suspended        1.0     default    
+arr_cust5.251        suspended        1.0     default    
+arr_cust5.252        suspended        1.0     default    
+arr_cust5.253        suspended        1.0     default    
+arr_cust4.254        suspended        1.0     default    
+arr_cust4.255        suspended        1.0     default    
+arr_cust4.256        suspended        1.0     default    
+arr_cust4.257        suspended        1.0     default    
+arr_cust4.258        suspended        1.0     default    
+arr_cust2.259        suspended        1.0     default    
+arr_cust2.260        suspended        1.0     default    
+arr_cust1.261        suspended        1.0     default    
+arr_cust1.262        suspended        1.0     default    
+arr_cust5.263        suspended        1.0     default    
+dep_cust.264         suspended        1.0     default    
+dep_cust.265         suspended        1.0     default    
+dep_cust.266         suspended        1.0     default    
+dep_cust.267         suspended        1.0     default    
+dep_cust.268         suspended        1.0     default    
+arr_cust3.269        suspended        1.0     default    
+arr_cust3.270        suspended        1.0     default    
+arr_cust1.271        suspended        1.0     default    
+arr_cust1.272        suspended        1.0     default    
+arr_cust1.273        suspended        1.0     default    
+arr_cust1.274        suspended        1.0     default    
+arr_cust1.275        suspended        1.0     default    
+arr_cust4.276        suspended        1.0     default    
+arr_cust3.277        suspended        1.0     default    
+arr_cust3.278        suspended        1.0     default    
+arr_cust2.279        suspended        1.0     default    
+arr_cust2.280        suspended        1.0     default    
+dep_cust.281         suspended        1.0     default    
+dep_cust.282         suspended        1.0     default    
+arr_cust4.283        suspended        1.0     default    
+arr_cust3.284        suspended        1.0     default    
+arr_cust3.285        suspended        1.0     default    
+arr_cust5.286        suspended        1.0     default    
+arr_cust5.287        suspended        1.0     default    
+arr_cust1.288        suspended        1.0     default    
+arr_cust1.289        suspended        1.0     default    
+arr_cust1.290        suspended        1.0     default    
+arr_cust1.291        suspended        1.0     default    
+arr_cust1.292        suspended        1.0     default    
+arr_cust2.293        suspended        1.0     default    
+dep_cust.294         suspended        1.0     default    
+dep_cust.295         suspended        1.0     default    
+arr_cust3.296        suspended        1.0     default    
+arr_cust3.297        suspended        1.0     default    
+arr_cust3.298        suspended        1.0     default    
+arr_cust3.299        suspended        1.0     default    
+arr_cust3.300        suspended        1.0     default    
+arr_cust3.301        suspended        1.0     default    
+dep_cust.302         suspended        1.0     default    
+dep_cust.303         suspended        1.0     default    
+dep_cust.304         suspended        1.0     default    
+dep_cust.305         suspended        1.0     default    
+dep_cust.306         suspended        1.0     default    
+arr_cust2.307        suspended        1.0     default    
+arr_cust4.308        suspended        1.0     default    
+arr_cust1.309        suspended        1.0     default    
+arr_cust1.310        suspended        1.0     default    
+arr_cust1.311        suspended        1.0     default    
+arr_cust1.312        suspended        1.0     default    
+arr_cust1.313        suspended        1.0     default    
+arr_cust3.314        suspended        1.0     default    
+dep_cust.315         suspended        1.0     default    
+arr_cust5.316        suspended        1.0     default    
+arr_cust5.317        suspended        1.0     default    
+arr_cust1.318        suspended        1.0     default    
+arr_cust1.319        suspended        1.0     default    
+arr_cust2.320        suspended        1.0     default    
+arr_cust2.321        suspended        1.0     default    
+arr_cust2.322        suspended        1.0     default    
+arr_cust2.323        suspended        1.0     default    
+arr_cust2.324        suspended        1.0     default    
+arr_cust5.325        suspended        1.0     default    
+arr_cust4.326        suspended        1.0     default    
+arr_cust4.327        suspended        1.0     default    
+dep_cust.328         suspended        1.0     default    
+dep_cust.329         suspended        1.0     default    
+dep_cust.330         suspended        1.0     default    
+dep_cust.331         suspended        1.0     default    
+arr_cust3.332        suspended        1.0     default    
+arr_cust3.333        suspended        1.0     default    
+arr_cust3.334        suspended        1.0     default    
+arr_cust3.335        suspended        1.0     default    
+dep_cust.336         suspended        1.0     default    
+dep_cust.337         suspended        1.0     default    
+dep_cust.338         suspended        1.0     default    
+dep_cust.339         suspended        1.0     default    
+dep_cust.340         suspended        1.0     default    
+dep_cust.341         suspended        1.0     default    
+arr_cust5.342        suspended        1.0     default    
+dep_cust.343         suspended        1.0     default    
+dep_cust.344         suspended        1.0     default    
+arr_cust5.345        suspended        1.0     default    
+arr_cust1.346        suspended        1.0     default    
+dep_cust.347         suspended        1.0     default    
+dep_cust.348         suspended        1.0     default    
+dep_cust.349         suspended        1.0     default    
+dep_cust.350         suspended        1.0     default    
+arr_cust3.351        suspended        1.0     default    
+arr_cust5.352        suspended        1.0     default    
+arr_cust5.353        suspended        1.0     default    
+arr_cust2.354        suspended        1.0     default    
+arr_cust2.355        suspended        1.0     default    
+arr_cust2.356        suspended        1.0     default    
+arr_cust2.357        suspended        1.0     default    
+arr_cust1.358        suspended        1.0     default    
+arr_cust1.359        suspended        1.0     default    
+dep_cust.360         suspended        1.0     default    
+arr_cust4.361        suspended        1.0     default    
+arr_cust4.362        suspended        1.0     default    
+arr_cust4.363        suspended        1.0     default    
+arr_cust4.364        suspended        1.0     default    
+arr_cust4.365        suspended        1.0     default    
+arr_cust4.366        suspended        1.0     default    
+arr_cust4.367        suspended        1.0     default    
+arr_cust4.368        suspended        1.0     default    
+arr_cust4.369        suspended        1.0     default    
+arr_cust5.370        suspended        1.0     default    
+arr_cust5.371        suspended        1.0     default    
+arr_cust3.372        suspended        1.0     default    
+arr_cust2.373        suspended        1.0     default    
+arr_cust5.374        suspended        1.0     default    
+arr_cust5.375        suspended        1.0     default    
+arr_cust5.376        suspended        1.0     default    
+arr_cust5.377        suspended        1.0     default    
+arr_cust5.378        suspended        1.0     default    
+arr_cust3.379        suspended        1.0     default    
+arr_cust3.380        suspended        1.0     default    
+arr_cust3.381        suspended        1.0     default    
+arr_cust3.382        suspended        1.0     default    
+arr_cust3.383        suspended        1.0     default    
+arr_cust5.384        suspended        1.0     default    
+arr_cust3.385        suspended        1.0     default    
+arr_cust1.386        suspended        1.0     default    
+arr_cust1.387        suspended        1.0     default    
+arr_cust1.388        suspended        1.0     default    
+arr_cust1.389        suspended        1.0     default    
+arr_cust1.390        suspended        1.0     default    
+arr_cust3.391        suspended        1.0     default    
+arr_cust4.392        suspended        1.0     default    
+arr_cust5.393        suspended        1.0     default    
+arr_cust5.394        suspended        1.0     default    
+arr_cust5.395        suspended        1.0     default    
+arr_cust5.396        suspended        1.0     default    
+arr_cust5.397        suspended        1.0     default    
+arr_cust5.398        suspended        1.0     default    
+dep_cust.399         suspended        1.0     default    
+arr_cust5.400        suspended        1.0     default    
+arr_cust5.401        suspended        1.0     default    
+arr_cust1.402        suspended        1.0     default    
+arr_cust1.403        suspended        1.0     default    
+arr_cust1.404        suspended        1.0     default    
+arr_cust1.405        suspended        1.0     default    
+arr_cust1.406        suspended        1.0     default    
+arr_cust2.407        suspended        1.0     default    
+arr_cust2.408        suspended        1.0     default    
+dep_cust.409         suspended        1.0     default    
+dep_cust.410         suspended        1.0     default    
+dep_cust.411         suspended        1.0     default    
+dep_cust.412         suspended        1.0     default    
+dep_cust.413         suspended        1.0     default    
+arr_cust3.414        suspended        1.0     default    
+arr_cust3.415        suspended        1.0     default    
+arr_cust1.416        suspended        1.0     default    
+arr_cust1.417        suspended        1.0     default    
+arr_cust1.418        suspended        1.0     default    
+arr_cust1.419        suspended        1.0     default    
+arr_cust1.420        suspended        1.0     default    
+dep_cust.421         suspended        1.0     default    
+arr_cust3.422        suspended        1.0     default    
+arr_cust3.423        suspended        1.0     default    
+arr_cust3.424        suspended        1.0     default    
+arr_cust3.425        suspended        1.0     default    
+arr_cust3.426        suspended        1.0     default    
+dep_cust.427         suspended        1.0     default    
+dep_cust.428         suspended        1.0     default    
+dep_cust.429         suspended        1.0     default    
+dep_cust.430         suspended        1.0     default    
+arr_cust3.431        suspended        1.0     default    
+arr_cust3.432        suspended        1.0     default    
+arr_cust3.433        suspended        1.0     default    
+arr_cust3.434        suspended        1.0     default    
+dep_cust.435         suspended        1.0     default    
+dep_cust.436         suspended        1.0     default    
+arr_cust1.437        suspended        1.0     default    
+arr_cust1.438        suspended        1.0     default    
+arr_cust2.439        suspended        1.0     default    
+arr_cust3.440        suspended        1.0     default    
+arr_cust3.441        suspended        1.0     default    
+arr_cust3.442        suspended        1.0     default    
+arr_cust3.443        suspended        1.0     default    
+arr_cust3.444        suspended        1.0     default    
+arr_cust4.445        suspended        1.0     default    
+arr_cust4.446        suspended        1.0     default    
+arr_cust4.447        suspended        1.0     default    
+arr_cust4.448        suspended        1.0     default    
+arr_cust1.449        suspended        1.0     default    
+arr_cust1.450        suspended        1.0     default    
+arr_cust2.451        suspended        1.0     default    
+arr_cust2.452        suspended        1.0     default    
+arr_cust2.453        suspended        1.0     default    
+arr_cust4.454        suspended        1.0     default    
+arr_cust4.455        suspended        1.0     default    
+arr_cust3.456        suspended        1.0     default    
+arr_cust5.457        suspended        1.0     default    
+arr_cust5.458        suspended        1.0     default    
+arr_cust5.459        suspended        1.0     default    
+arr_cust5.460        suspended        1.0     default    
+arr_cust5.461        suspended        1.0     default    
+arr_cust3.462        suspended        1.0     default    
+arr_cust3.463        suspended        1.0     default    
+arr_cust3.464        suspended        1.0     default    
+arr_cust3.465        suspended        1.0     default    
+arr_cust3.466        suspended        1.0     default    
+arr_cust2.467        suspended        1.0     default    
+arr_cust2.468        suspended        1.0     default    
+arr_cust2.469        suspended        1.0     default    
+arr_cust2.470        suspended        1.0     default    
+arr_cust2.471        suspended        1.0     default    
+arr_cust3.472        suspended        1.0     default    
+arr_cust2.473        suspended        1.0     default    
+arr_cust2.474        suspended        1.0     default    
+arr_cust2.475        suspended        1.0     default    
+arr_cust2.476        suspended        1.0     default    
+arr_cust2.477        suspended        1.0     default    
+arr_cust4.478        suspended        1.0     default    
+arr_cust4.479        suspended        1.0     default    
+arr_cust4.480        suspended        1.0     default    
+arr_cust4.481        suspended        1.0     default    
+arr_cust4.482        suspended        1.0     default    
+arr_cust3.483        suspended        1.0     default    
+arr_cust3.484        suspended        1.0     default    
+arr_cust3.485        suspended        1.0     default    
+arr_cust3.486        suspended        1.0     default    
+arr_cust3.487        suspended        1.0     default    
+arr_cust3.488        suspended        1.0     default    
+arr_cust4.489        suspended        1.0     default    
+arr_cust4.490        suspended        1.0     default    
+arr_cust2.491        suspended        1.0     default    
+arr_cust2.492        suspended        1.0     default    
+arr_cust2.493        suspended        1.0     default    
+arr_cust2.494        suspended        1.0     default    
+arr_cust2.495        suspended        1.0     default    
+dep_cust.496         suspended        1.0     default    
+arr_cust1.497        suspended        1.0     default    
+arr_cust4.498        suspended        1.0     default    
+arr_cust5.499        suspended        1.0     default    
+arr_cust5.500        suspended        1.0     default    
+arr_cust5.501        suspended        1.0     default    
+arr_cust5.502        suspended        1.0     default    
+arr_cust5.503        suspended        1.0     default    
+arr_cust3.504        suspended        1.0     default    
+arr_cust3.505        suspended        1.0     default    
+arr_cust3.506        suspended        1.0     default    
+arr_cust3.507        suspended        1.0     default    
+arr_cust3.508        suspended        1.0     default    
+arr_cust2.509        suspended        1.0     default    
+arr_cust2.510        suspended        1.0     default    
+arr_cust2.511        suspended        1.0     default    
+arr_cust2.512        suspended        1.0     default    
+arr_cust2.513        suspended        1.0     default    
+arr_cust1.514        suspended        1.0     default    
+arr_cust1.515        suspended        1.0     default    
+arr_cust4.516        suspended        1.0     default    
+arr_cust4.517        suspended        1.0     default    
+arr_cust4.518        suspended        1.0     default    
+arr_cust4.519        suspended        1.0     default    
+arr_cust4.520        suspended        1.0     default    
+arr_cust2.521        suspended        1.0     default    
+arr_cust2.522        suspended        1.0     default    
+arr_cust5.523        suspended        1.0     default    
+arr_cust5.524        suspended        1.0     default    
+dep_cust.525         suspended        1.0     default    
+dep_cust.526         suspended        1.0     default    
+dep_cust.527         suspended        1.0     default    
+dep_cust.528         suspended        1.0     default    
+dep_cust.529         suspended        1.0     default    
+arr_cust3.530        suspended        1.0     default    
+arr_cust1.531        suspended        1.0     default    
+arr_cust1.532        suspended        1.0     default    
+arr_cust4.533        suspended        1.0     default    
+arr_cust4.534        suspended        1.0     default    
+arr_cust1.535        suspended        1.0     default    
+arr_cust2.536        suspended        1.0     default    
+dep_cust.537         suspended        1.0     default    
+dep_cust.538         suspended        1.0     default    
+dep_cust.539         suspended        1.0     default    
+dep_cust.540         suspended        1.0     default    
+dep_cust.541         suspended        1.0     default    
+arr_cust4.542        suspended        1.0     default    
+arr_cust1.543        suspended        1.0     default    
+arr_cust1.544        suspended        1.0     default    
+arr_cust1.545        suspended        1.0     default    
+arr_cust1.546        suspended        1.0     default    
+arr_cust1.547        suspended        1.0     default    
+arr_cust1.548        suspended        1.0     default    
+arr_cust3.549        suspended        1.0     default    
+arr_cust3.550        suspended        1.0     default    
+dep_cust.551         suspended        1.0     default    
+arr_cust4.552        suspended        1.0     default    
+arr_cust2.553        suspended        1.0     default    
+arr_cust2.554        suspended        1.0     default    
+arr_cust2.555        suspended        1.0     default    
+arr_cust2.556        suspended        1.0     default    
+dep_cust.557         suspended        1.0     default    
+dep_cust.558         suspended        1.0     default    
+arr_cust3.559        suspended        1.0     default    
+arr_cust3.560        suspended        1.0     default    
+arr_cust3.561        suspended        1.0     default    
+arr_cust3.562        suspended        1.0     default    
+arr_cust4.563        suspended        1.0     default    
+dep_cust.564         suspended        1.0     default    
+dep_cust.565         suspended        1.0     default    
+arr_cust3.566        suspended        1.0     default    
+arr_cust3.567        suspended        1.0     default    
+arr_cust3.568        suspended        1.0     default    
+arr_cust3.569        suspended        1.0     default    
+arr_cust3.570        suspended        1.0     default    
+arr_cust3.571        suspended        1.0     default    
+dep_cust.572         suspended        1.0     default    
+dep_cust.573         suspended        1.0     default    
+arr_cust5.574        suspended        1.0     default    
+arr_cust5.575        suspended        1.0     default    
+arr_cust4.576        suspended        1.0     default    
+arr_cust4.577        suspended        1.0     default    
+dep_cust.578         suspended        1.0     default    
+dep_cust.579         suspended        1.0     default    
+arr_cust2.580        suspended        1.0     default    
+arr_cust2.581        suspended        1.0     default    
+arr_cust2.582        suspended        1.0     default    
+arr_cust2.583        suspended        1.0     default    
+arr_cust2.584        suspended        1.0     default    
+dep_cust.585         suspended        1.0     default    
+dep_cust.586         suspended        1.0     default    
+arr_cust4.587        suspended        1.0     default    
+arr_cust4.588        suspended        1.0     default    
+arr_cust4.589        suspended        1.0     default    
+arr_cust4.590        suspended        1.0     default    
+arr_cust4.591        suspended        1.0     default    
+arr_cust3.592        suspended        1.0     default    
+arr_cust3.593        suspended        1.0     default    
+arr_cust3.594        suspended        1.0     default    
+arr_cust3.595        suspended        1.0     default    
+arr_cust3.596        suspended        1.0     default    
+arr_cust3.597        suspended        1.0     default    
+arr_cust3.598        suspended        1.0     default    
+dep_cust.599         suspended        1.0     default    
+dep_cust.600         suspended        1.0     default    
+arr_cust3.601        suspended        1.0     default    
+arr_cust3.602        suspended        1.0     default    
+arr_cust4.603        suspended        1.0     default    
+dep_cust.604         suspended        1.0     default    
+dep_cust.605         suspended        1.0     default    
+arr_cust4.606        suspended        1.0     default    
+arr_cust1.607        suspended        1.0     default    
+arr_cust1.608        suspended        1.0     default    
+arr_cust1.609        suspended        1.0     default    
+arr_cust1.610        suspended        1.0     default    
+arr_cust1.611        suspended        1.0     default    
+arr_cust5.612        suspended        1.0     default    
+arr_cust5.613        suspended        1.0     default    
+arr_cust5.614        suspended        1.0     default    
+arr_cust5.615        suspended        1.0     default    
+arr_cust5.616        suspended        1.0     default    
+arr_cust1.617        suspended        1.0     default    
+arr_cust1.618        suspended        1.0     default    
+arr_cust1.619        suspended        1.0     default    
+arr_cust1.620        suspended        1.0     default    
+arr_cust1.621        suspended        1.0     default    
+arr_cust2.622        suspended        1.0     default    
+arr_cust2.623        suspended        1.0     default    
+arr_cust5.624        suspended        1.0     default    
+arr_cust5.625        suspended        1.0     default    
+arr_cust5.626        suspended        1.0     default    
+arr_cust5.627        suspended        1.0     default    
+arr_cust5.628        suspended        1.0     default    
+arr_cust3.629        suspended        1.0     default    
+arr_cust3.630        suspended        1.0     default    
+arr_cust5.631        suspended        1.0     default    
+arr_cust5.632        suspended        1.0     default    
+arr_cust5.633        suspended        1.0     default    
+arr_cust5.634        suspended        1.0     default    
+arr_cust5.635        suspended        1.0     default    
+arr_cust2.636        suspended        1.0     default    
+arr_cust3.637        suspended        1.0     default    
+arr_cust3.638        suspended        1.0     default    
+arr_cust2.639        suspended        1.0     default    
+arr_cust2.640        suspended        1.0     default    
+arr_cust3.641        suspended        1.0     default    
+arr_cust3.642        suspended        1.0     default    
+arr_cust1.643        suspended        1.0     default    
+arr_cust5.644        suspended        1.0     default    
+arr_cust5.645        suspended        1.0     default    
+arr_cust5.646        suspended        1.0     default    
+arr_cust5.647        suspended        1.0     default    
+arr_cust5.648        suspended        1.0     default    
+arr_cust5.649        suspended        1.0     default    
+arr_cust5.650        suspended        1.0     default    
+arr_cust5.651        suspended        1.0     default    
+arr_cust5.652        suspended        1.0     default    
+arr_cust5.653        suspended        1.0     default    
+arr_cust5.654        suspended        1.0     default    
+dep_cust.655         suspended        1.0     default    
+arr_cust1.656        suspended        1.0     default    
+arr_cust1.657        suspended        1.0     default    
+arr_cust1.658        suspended        1.0     default    
+arr_cust1.659        suspended        1.0     default    
+arr_cust2.660        suspended        1.0     default    
+arr_cust1.661        suspended        1.0     default    
+arr_cust1.662        suspended        1.0     default    
+arr_cust1.663        suspended        1.0     default    
+arr_cust1.664        suspended        1.0     default    
+arr_cust1.665        suspended        1.0     default    
+arr_cust4.666        suspended        1.0     default    
+arr_cust4.667        suspended        1.0     default    
+arr_cust4.668        suspended        1.0     default    
+arr_cust4.669        suspended        1.0     default    
+arr_cust4.670        suspended        1.0     default    
+arr_cust3.671        suspended        1.0     default    
+arr_cust3.672        suspended        1.0     default    
+arr_cust3.673        suspended        1.0     default    
+arr_cust3.674        suspended        1.0     default    
+arr_cust3.675        suspended        1.0     default    
+arr_cust3.676        suspended        1.0     default    
+arr_cust2.677        suspended        1.0     default    
+arr_cust2.678        suspended        1.0     default    
+arr_cust4.679        suspended        1.0     default    
+arr_cust4.680        suspended        1.0     default    
+arr_cust4.681        suspended        1.0     default    
+arr_cust4.682        suspended        1.0     default    
+arr_cust4.683        suspended        1.0     default    
+arr_cust4.684        suspended        1.0     default    
+arr_cust4.685        suspended        1.0     default    
+arr_cust4.686        suspended        1.0     default    
+arr_cust4.687        suspended        1.0     default    
+arr_cust4.688        suspended        1.0     default    
+arr_cust4.689        suspended        1.0     default    
+arr_cust4.690        suspended        1.0     default    
+arr_cust3.691        suspended        1.0     default    
+arr_cust4.692        suspended        1.0     default    
+arr_cust4.693        suspended        1.0     default    
+arr_cust4.694        suspended        1.0     default    
+arr_cust4.695        suspended        1.0     default    
+arr_cust4.696        suspended        1.0     default    
+arr_cust4.697        suspended        1.0     default    
+arr_cust4.698        suspended        1.0     default    
+arr_cust5.699        suspended        1.0     default    
+arr_cust4.700        suspended        1.0     default    
+arr_cust1.701        suspended        1.0     default    
+arr_cust5.702        suspended        1.0     default    
+arr_cust5.703        suspended        1.0     default    
+arr_cust1.704        suspended        1.0     default    
+arr_cust1.705        suspended        1.0     default    
+arr_cust1.706        suspended        1.0     default    
+arr_cust1.707        suspended        1.0     default    
+arr_cust1.708        suspended        1.0     default    
+arr_cust2.709        suspended        1.0     default    
+arr_cust2.710        suspended        1.0     default    
+arr_cust2.711        suspended        1.0     default    
+arr_cust2.712        suspended        1.0     default    
+arr_cust2.713        suspended        1.0     default    
+arr_cust3.714        suspended        1.0     default    
+arr_cust3.715        suspended        1.0     default    
+arr_cust3.716        suspended        1.0     default    
+arr_cust3.717        suspended        1.0     default    
+arr_cust3.718        suspended        1.0     default    
+arr_cust2.719        suspended        1.0     default    
+arr_cust2.720        suspended        1.0     default    
+arr_cust1.721        suspended        1.0     default    
+arr_cust1.722        suspended        1.0     default    
+arr_cust1.723        suspended        1.0     default    
+arr_cust1.724        suspended        1.0     default    
+arr_cust1.725        suspended        1.0     default    
+arr_cust4.726        suspended        1.0     default    
+arr_cust4.727        suspended        1.0     default    
+dep_cust.728         suspended        1.0     default    
+dep_cust.729         suspended        1.0     default    
+dep_cust.730         suspended        1.0     default    
+dep_cust.731         suspended        1.0     default    
+dep_cust.732         suspended        1.0     default    
+arr_cust1.733        suspended        1.0     default    
+arr_cust1.734        suspended        1.0     default    
+arr_cust5.735        suspended        1.0     default    
+arr_cust5.736        suspended        1.0     default    
+arr_cust2.737        suspended        1.0     default    
+arr_cust3.738        suspended        1.0     default    
+arr_cust3.739        suspended        1.0     default    
+arr_cust3.740        suspended        1.0     default    
+arr_cust3.741        suspended        1.0     default    
+arr_cust3.742        suspended        1.0     default    
+arr_cust3.743        suspended        1.0     default    
+arr_cust3.744        suspended        1.0     default    
+arr_cust1.745        suspended        1.0     default    
+arr_cust1.746        suspended        1.0     default    
+arr_cust4.747        suspended        1.0     default    
+arr_cust4.748        suspended        1.0     default    
+arr_cust4.749        suspended        1.0     default    
+arr_cust4.750        suspended        1.0     default    
+arr_cust4.751        suspended        1.0     default    
+arr_cust3.752        suspended        1.0     default    
+arr_cust3.753        suspended        1.0     default    
+arr_cust3.754        suspended        1.0     default    
+arr_cust3.755        suspended        1.0     default    
+arr_cust3.756        suspended        1.0     default    
+arr_cust2.757        suspended        1.0     default    
+arr_cust2.758        suspended        1.0     default    
+arr_cust2.759        suspended        1.0     default    
+arr_cust2.760        suspended        1.0     default    
+arr_cust2.761        suspended        1.0     default    
+arr_cust4.762        suspended        1.0     default    
+arr_cust4.763        suspended        1.0     default    
+arr_cust4.764        suspended        1.0     default    
+arr_cust4.765        suspended        1.0     default    
+arr_cust4.766        suspended        1.0     default    
+arr_cust3.767        suspended        1.0     default    
+arr_cust3.768        suspended        1.0     default    
+arr_cust5.769        suspended        1.0     default    
+arr_cust5.770        suspended        1.0     default    
+arr_cust3.771        suspended        1.0     default    
+arr_cust5.772        suspended        1.0     default    
+arr_cust5.773        suspended        1.0     default    
+arr_cust2.774        suspended        1.0     default    
+arr_cust2.775        suspended        1.0     default    
+arr_cust5.776        suspended        1.0     default    
+arr_cust4.777        suspended        1.0     default    
+arr_cust4.778        suspended        1.0     default    
+arr_cust2.779        suspended        1.0     default    
+arr_cust2.780        suspended        1.0     default    
+arr_cust2.781        suspended        1.0     default    
+arr_cust2.782        suspended        1.0     default    
+arr_cust2.783        suspended        1.0     default    
+arr_cust2.784        suspended        1.0     default    
+arr_cust2.785        suspended        1.0     default    
+arr_cust1.786        suspended        1.0     default    
+arr_cust1.787        suspended        1.0     default    
+arr_cust1.788        suspended        1.0     default    
+arr_cust1.789        suspended        1.0     default    
+arr_cust1.790        suspended        1.0     default    
+arr_cust1.791        suspended        1.0     default    
+arr_cust1.792        suspended        1.0     default    
+arr_cust1.793        suspended        1.0     default    
+arr_cust1.794        suspended        1.0     default    
+arr_cust1.795        suspended        1.0     default    
+arr_cust2.796        suspended        1.0     default    
+arr_cust2.797        suspended        1.0     default    
+arr_cust2.798        suspended        1.0     default    
+arr_cust2.799        suspended        1.0     default    
+arr_cust2.800        suspended        1.0     default    
+arr_cust1.801        suspended        1.0     default    
+arr_cust1.802        suspended        1.0     default    
+arr_cust5.803        suspended        1.0     default    
+arr_cust2.804        suspended        1.0     default    
+arr_cust2.805        suspended        1.0     default    
+arr_cust2.806        suspended        1.0     default    
+arr_cust2.807        suspended        1.0     default    
+arr_cust2.808        suspended        1.0     default    
+arr_cust2.809        suspended        1.0     default    
+dep_cust.810         suspended        1.0     default    
+dep_cust.811         suspended        1.0     default    
+arr_cust5.812        suspended        1.0     default    
+arr_cust2.813        suspended        1.0     default    
+arr_cust2.814        suspended        1.0     default    
+arr_cust5.815        suspended        1.0     default    
+arr_cust5.816        suspended        1.0     default    
+arr_cust5.817        suspended        1.0     default    
+arr_cust2.818        suspended        1.0     default    
+arr_cust2.819        suspended        1.0     default    
+arr_cust2.820        suspended        1.0     default    
+arr_cust2.821        suspended        1.0     default    
+arr_cust2.822        suspended        1.0     default    
+arr_cust3.823        suspended        1.0     default    
+arr_cust3.824        suspended        1.0     default    
+arr_cust3.825        suspended        1.0     default    
+arr_cust3.826        suspended        1.0     default    
+arr_cust3.827        suspended        1.0     default    
+arr_cust1.828        suspended        1.0     default    
+arr_cust1.829        suspended        1.0     default    
+arr_cust3.830        suspended        1.0     default    
+arr_cust3.831        suspended        1.0     default    
+arr_cust3.832        suspended        1.0     default    
+arr_cust3.833        suspended        1.0     default    
+arr_cust3.834        suspended        1.0     default    
+arr_cust3.835        suspended        1.0     default    
+arr_cust3.836        suspended        1.0     default    
+arr_cust3.837        suspended        1.0     default    
+arr_cust3.838        suspended        1.0     default    
+arr_cust1.839        suspended        1.0     default    
+arr_cust1.840        suspended        1.0     default    
+arr_cust1.841        suspended        1.0     default    
+arr_cust1.842        suspended        1.0     default    
+arr_cust1.843        suspended        1.0     default    
+arr_cust1.844        suspended        1.0     default    
+dep_cust.845         suspended        1.0     default    
+dep_cust.846         suspended        1.0     default    
+arr_cust2.847        suspended        1.0     default    
+dep_cust.848         suspended        1.0     default    
+dep_cust.849         suspended        1.0     default    
+dep_cust.850         suspended        1.0     default    
+dep_cust.851         suspended        1.0     default    
+dep_cust.852         suspended        1.0     default    
+arr_cust2.853        suspended        1.0     default    
+arr_cust2.854        suspended        1.0     default    
+arr_cust2.855        suspended        1.0     default    
+arr_cust2.856        suspended        1.0     default    
+arr_cust2.857        suspended        1.0     default    
+arr_cust2.858        suspended        1.0     default    
+arr_cust2.859        suspended        1.0     default    
+arr_cust2.860        suspended        1.0     default    
+arr_cust2.861        suspended        1.0     default    
+arr_cust2.862        suspended        1.0     default    
+dep_cust.863         suspended        1.0     default    
+dep_cust.864         suspended        1.0     default    
+dep_cust.865         suspended        1.0     default    
+dep_cust.866         suspended        1.0     default    
+dep_cust.867         suspended        1.0     default    
+arr_cust3.868        suspended        1.0     default    
+arr_cust3.869        suspended        1.0     default    
+arr_cust3.870        suspended        1.0     default    
+arr_cust3.871        suspended        1.0     default    
+arr_cust3.872        suspended        1.0     default    
+arr_cust5.873        suspended        1.0     default    
+arr_cust4.874        suspended        1.0     default    
+arr_cust4.875        suspended        1.0     default    
+arr_cust4.876        suspended        1.0     default    
+arr_cust4.877        suspended        1.0     default    
+arr_cust4.878        suspended        1.0     default    
+arr_cust1.879        suspended        1.0     default    
+arr_cust1.880        suspended        1.0     default    
+dep_cust.881         suspended        1.0     default    
+dep_cust.882         suspended        1.0     default    
+arr_cust4.883        suspended        1.0     default    
+arr_cust4.884        suspended        1.0     default    
+arr_cust4.885        suspended        1.0     default    
+arr_cust1.886        suspended        1.0     default    
+arr_cust1.887        suspended        1.0     default    
+arr_cust1.888        suspended        1.0     default    
+arr_cust1.889        suspended        1.0     default    
+arr_cust1.890        suspended        1.0     default    
+arr_cust3.891        suspended        1.0     default    
+arr_cust3.892        suspended        1.0     default    
+arr_cust1.893        suspended        1.0     default    
+arr_cust1.894        suspended        1.0     default    
+arr_cust1.895        suspended        1.0     default    
+arr_cust1.896        suspended        1.0     default    
+arr_cust1.897        suspended        1.0     default    
+arr_cust5.898        suspended        1.0     default    
+arr_cust5.899        suspended        1.0     default    
+arr_cust5.900        suspended        1.0     default    
+arr_cust5.901        suspended        1.0     default    
+arr_cust5.902        suspended        1.0     default    
+arr_cust3.903        suspended        1.0     default    
+arr_cust3.904        suspended        1.0     default    
+arr_cust3.905        suspended        1.0     default    
+arr_cust3.906        suspended        1.0     default    
+arr_cust3.907        suspended        1.0     default    
+arr_cust1.908        suspended        1.0     default    
+arr_cust1.909        suspended        1.0     default    
+arr_cust1.910        suspended        1.0     default    
+arr_cust1.911        suspended        1.0     default    
+arr_cust1.912        suspended        1.0     default    
+arr_cust4.913        suspended        1.0     default    
+arr_cust3.914        suspended        1.0     default    
+arr_cust3.915        suspended        1.0     default    
+arr_cust4.916        suspended        1.0     default    
+arr_cust2.917        suspended        1.0     default    
+arr_cust2.918        suspended        1.0     default    
+arr_cust2.919        suspended        1.0     default    
+arr_cust2.920        suspended        1.0     default    
+arr_cust2.921        suspended        1.0     default    
+dep_cust.922         suspended        1.0     default    
+dep_cust.923         suspended        1.0     default    
+arr_cust3.924        suspended        1.0     default    
+arr_cust3.925        suspended        1.0     default    
+arr_cust2.926        suspended        1.0     default    
+arr_cust2.927        suspended        1.0     default    
+arr_cust5.928        suspended        1.0     default    
+arr_cust5.929        suspended        1.0     default    
+arr_cust3.930        suspended        1.0     default    
+arr_cust1.931        suspended        1.0     default    
+arr_cust1.932        suspended        1.0     default    
+arr_cust1.933        suspended        1.0     default    
+arr_cust1.934        suspended        1.0     default    
+arr_cust1.935        suspended        1.0     default    
+arr_cust3.936        suspended        1.0     default    
+arr_cust3.937        suspended        1.0     default    
+arr_cust5.938        suspended        1.0     default    
+arr_cust5.939        suspended        1.0     default    
+arr_cust5.940        suspended        1.0     default    
+arr_cust5.941        suspended        1.0     default    
+arr_cust5.942        suspended        1.0     default    
+arr_cust1.943        suspended        1.0     default    
+arr_cust1.944        suspended        1.0     default    
+arr_cust1.945        suspended        1.0     default    
+arr_cust1.946        suspended        1.0     default    
+arr_cust1.947        suspended        1.0     default    
+arr_cust5.948        suspended        1.0     default    
+arr_cust5.949        suspended        1.0     default    
+arr_cust5.950        suspended        1.0     default    
+arr_cust5.951        suspended        1.0     default    
+arr_cust5.952        suspended        1.0     default    
+dep_cust.953         suspended        1.0     default    
+dep_cust.954         suspended        1.0     default    
+arr_cust2.955        suspended        1.0     default    
+arr_cust2.956        suspended        1.0     default    
+dep_cust.957         suspended        1.0     default    
+dep_cust.958         suspended        1.0     default    
+arr_cust2.959        suspended        1.0     default    
+dep_cust.960         suspended        1.0     default    
+arr_cust2.961        suspended        1.0     default    
+arr_cust2.962        suspended        1.0     default    
+arr_cust2.963        suspended        1.0     default    
+arr_cust2.964        suspended        1.0     default    
+arr_cust2.965        suspended        1.0     default    
+dep_cust.966         suspended        1.0     default    
+dep_cust.967         suspended        1.0     default    
+arr_cust2.968        suspended        1.0     default    
+arr_cust2.969        suspended        1.0     default    
+arr_cust2.970        suspended        1.0     default    
+arr_cust2.971        suspended        1.0     default    
+arr_cust2.972        suspended        1.0     default    
+arr_cust4.973        suspended        1.0     default    
+arr_cust4.974        suspended        1.0     default    
+arr_cust4.975        suspended        1.0     default    
+arr_cust1.976        suspended        1.0     default    
+arr_cust1.977        suspended        1.0     default    
+arr_cust1.978        suspended        1.0     default    
+arr_cust1.979        suspended        1.0     default    
+arr_cust4.980        suspended        1.0     default    
+arr_cust4.981        suspended        1.0     default    
+arr_cust1.982        suspended        1.0     default    
+arr_cust1.983        suspended        1.0     default    
+arr_cust5.984        suspended        1.0     default    
+arr_cust5.985        suspended        1.0     default    
+arr_cust1.986        suspended        1.0     default    
+arr_cust1.987        suspended        1.0     default    
+arr_cust5.988        suspended        1.0     default    
+arr_cust5.989        suspended        1.0     default    
+arr_cust5.990        suspended        1.0     default    
+arr_cust5.991        suspended        1.0     default    
+arr_cust5.992        suspended        1.0     default    
+arr_cust1.993        suspended        1.0     default    
+arr_cust1.994        suspended        1.0     default    
+arr_cust1.995        suspended        1.0     default    
+arr_cust1.996        suspended        1.0     default    
+arr_cust1.997        suspended        1.0     default    
+arr_cust5.998        suspended        1.0     default    
+arr_cust5.999        suspended        1.0     default    
+arr_cust5.1000       suspended        1.0     default    
+                                                                                
+STATUS OF FACILITIES 
+
+                busy     queue  
+name.id        servers   length        processes
+--------------------------------------------------------------------------------
+Curb[0].6       1 of 1    150    serv: dep_cust.20                              
+                                queue: dep_cust.27   dep_cust.28   dep_cust.29  
+                                       dep_cust.30   dep_cust.31   dep_cust.44  
+                                       dep_cust.45   dep_cust.46   dep_cust.47  
+                                       dep_cust.75   dep_cust.76   dep_cust.77  
+                                       dep_cust.78   dep_cust.79   dep_cust.80  
+                                       dep_cust.99   dep_cust.100  dep_cust.115 
+                                       dep_cust.116  dep_cust.118  dep_cust.119 
+                                       dep_cust.120  dep_cust.121  dep_cust.122 
+                                       dep_cust.140  dep_cust.141  dep_cust.142 
+                                       dep_cust.143  dep_cust.144  dep_cust.145 
+                                       dep_cust.146  dep_cust.147  dep_cust.148 
+                                       dep_cust.149  dep_cust.160  dep_cust.161 
+                                       dep_cust.162  dep_cust.163  dep_cust.164 
+                                       dep_cust.186  dep_cust.187  dep_cust.188 
+                                       dep_cust.189  dep_cust.190  dep_cust.231 
+                                       dep_cust.232  dep_cust.242  dep_cust.243 
+                                       dep_cust.264  dep_cust.265  dep_cust.266 
+                                       dep_cust.267  dep_cust.268  dep_cust.281 
+                                       dep_cust.282  dep_cust.294  dep_cust.295 
+                                       dep_cust.302  dep_cust.303  dep_cust.304 
+                                       dep_cust.305  dep_cust.306  dep_cust.315 
+                                       dep_cust.328  dep_cust.329  dep_cust.330 
+                                       dep_cust.331  dep_cust.336  dep_cust.337 
+                                       dep_cust.338  dep_cust.339  dep_cust.340 
+                                       dep_cust.341  dep_cust.343  dep_cust.344 
+                                       dep_cust.347  dep_cust.348  dep_cust.349 
+                                       dep_cust.350  dep_cust.360  dep_cust.399 
+                                       dep_cust.409  dep_cust.410  dep_cust.411 
+                                       dep_cust.412  dep_cust.413  dep_cust.421 
+                                       dep_cust.427  dep_cust.428  dep_cust.429 
+                                       dep_cust.430  dep_cust.435  dep_cust.436 
+                                       dep_cust.496  dep_cust.525  dep_cust.526 
+                                       dep_cust.527  dep_cust.528  dep_cust.529 
+                                       dep_cust.537  dep_cust.538  dep_cust.539 
+                                       dep_cust.540  dep_cust.541  dep_cust.551 
+                                       dep_cust.557  dep_cust.558  dep_cust.564 
+                                       dep_cust.565  dep_cust.572  dep_cust.573 
+                                       dep_cust.578  dep_cust.579  dep_cust.585 
+                                       dep_cust.586  dep_cust.599  dep_cust.600 
+                                       dep_cust.604  dep_cust.605  dep_cust.655 
+                                       dep_cust.728  dep_cust.729  dep_cust.730 
+                                       dep_cust.731  dep_cust.732  dep_cust.810 
+                                       dep_cust.811  dep_cust.845  dep_cust.846 
+                                       dep_cust.848  dep_cust.849  dep_cust.850 
+                                       dep_cust.851  dep_cust.852  dep_cust.863 
+                                       dep_cust.864  dep_cust.865  dep_cust.866 
+                                       dep_cust.867  dep_cust.881  dep_cust.882 
+                                       dep_cust.922  dep_cust.923  dep_cust.953 
+                                       dep_cust.954  dep_cust.957  dep_cust.958 
+                                       dep_cust.960  dep_cust.966  dep_cust.967 
+Curb[1].7       1 of 1    174    serv: arr_cust1.32                             
+                                queue: arr_cust1.33  arr_cust1.34  arr_cust1.35 
+                                       arr_cust1.36  arr_cust1.42  arr_cust1.43 
+                                       arr_cust1.81  arr_cust1.82  arr_cust1.83 
+                                       arr_cust1.84  arr_cust1.85  arr_cust1.86 
+                                       arr_cust1.87  arr_cust1.88  arr_cust1.89 
+                                       arr_cust1.90  arr_cust1.126 arr_cust1.127
+                                       arr_cust1.128 arr_cust1.129 arr_cust1.130
+                                       arr_cust1.191 arr_cust1.192 arr_cust1.229
+                                       arr_cust1.230 arr_cust1.237 arr_cust1.261
+                                       arr_cust1.262 arr_cust1.271 arr_cust1.272
+                                       arr_cust1.273 arr_cust1.274 arr_cust1.275
+                                       arr_cust1.288 arr_cust1.289 arr_cust1.290
+                                       arr_cust1.291 arr_cust1.292 arr_cust1.309
+                                       arr_cust1.310 arr_cust1.311 arr_cust1.312
+                                       arr_cust1.313 arr_cust1.318 arr_cust1.319
+                                       arr_cust1.346 arr_cust1.358 arr_cust1.359
+                                       arr_cust1.386 arr_cust1.387 arr_cust1.388
+                                       arr_cust1.389 arr_cust1.390 arr_cust1.402
+                                       arr_cust1.403 arr_cust1.404 arr_cust1.405
+                                       arr_cust1.406 arr_cust1.416 arr_cust1.417
+                                       arr_cust1.418 arr_cust1.419 arr_cust1.420
+                                       arr_cust1.437 arr_cust1.438 arr_cust1.449
+                                       arr_cust1.450 arr_cust1.497 arr_cust1.514
+                                       arr_cust1.515 arr_cust1.531 arr_cust1.532
+                                       arr_cust1.535 arr_cust1.543 arr_cust1.544
+                                       arr_cust1.545 arr_cust1.546 arr_cust1.547
+                                       arr_cust1.548 arr_cust1.607 arr_cust1.608
+                                       arr_cust1.609 arr_cust1.610 arr_cust1.611
+                                       arr_cust1.617 arr_cust1.618 arr_cust1.619
+                                       arr_cust1.620 arr_cust1.621 arr_cust1.643
+                                       arr_cust1.656 arr_cust1.657 arr_cust1.658
+                                       arr_cust1.659 arr_cust1.661 arr_cust1.662
+                                       arr_cust1.663 arr_cust1.664 arr_cust1.665
+                                       arr_cust1.701 arr_cust1.704 arr_cust1.705
+                                       arr_cust1.706 arr_cust1.707 arr_cust1.708
+                                       arr_cust1.721 arr_cust1.722 arr_cust1.723
+                                       arr_cust1.724 arr_cust1.725 arr_cust1.733
+                                       arr_cust1.734 arr_cust1.745 arr_cust1.746
+                                       arr_cust1.786 arr_cust1.787 arr_cust1.788
+                                       arr_cust1.789 arr_cust1.790 arr_cust1.791
+                                       arr_cust1.792 arr_cust1.793 arr_cust1.794
+                                       arr_cust1.795 arr_cust1.801 arr_cust1.802
+                                       arr_cust1.828 arr_cust1.829 arr_cust1.839
+                                       arr_cust1.840 arr_cust1.841 arr_cust1.842
+                                       arr_cust1.843 arr_cust1.844 arr_cust1.879
+                                       arr_cust1.880 arr_cust1.886 arr_cust1.887
+                                       arr_cust1.888 arr_cust1.889 arr_cust1.890
+                                       arr_cust1.893 arr_cust1.894 arr_cust1.895
+                                       arr_cust1.896 arr_cust1.897 arr_cust1.908
+                                       arr_cust1.909 arr_cust1.910 arr_cust1.911
+                                       arr_cust1.912 arr_cust1.931 arr_cust1.932
+                                       arr_cust1.933 arr_cust1.934 arr_cust1.935
+                                       arr_cust1.943 arr_cust1.944 arr_cust1.945
+                                       arr_cust1.946 arr_cust1.947 arr_cust1.976
+                                       arr_cust1.977 arr_cust1.978 arr_cust1.979
+                                       arr_cust1.982 arr_cust1.983 arr_cust1.986
+                                       arr_cust1.987 arr_cust1.993 arr_cust1.994
+                                       arr_cust1.995 arr_cust1.996 arr_cust1.997
+Curb[2].8       1 of 1    163    serv: arr_cust2.21                             
+                                queue: arr_cust2.50  arr_cust2.51  arr_cust2.52 
+                                       arr_cust2.53  arr_cust2.54  arr_cust2.55 
+                                       arr_cust2.56  arr_cust2.57  arr_cust2.58 
+                                       arr_cust2.59  arr_cust2.67  arr_cust2.68 
+                                       arr_cust2.69  arr_cust2.93  arr_cust2.103
+                                       arr_cust2.104 arr_cust2.112 arr_cust2.113
+                                       arr_cust2.123 arr_cust2.124 arr_cust2.152
+                                       arr_cust2.167 arr_cust2.168 arr_cust2.185
+                                       arr_cust2.206 arr_cust2.207 arr_cust2.233
+                                       arr_cust2.234 arr_cust2.244 arr_cust2.245
+                                       arr_cust2.259 arr_cust2.260 arr_cust2.279
+                                       arr_cust2.280 arr_cust2.293 arr_cust2.307
+                                       arr_cust2.320 arr_cust2.321 arr_cust2.322
+                                       arr_cust2.323 arr_cust2.324 arr_cust2.354
+                                       arr_cust2.355 arr_cust2.356 arr_cust2.357
+                                       arr_cust2.373 arr_cust2.407 arr_cust2.408
+                                       arr_cust2.439 arr_cust2.451 arr_cust2.452
+                                       arr_cust2.453 arr_cust2.467 arr_cust2.468
+                                       arr_cust2.469 arr_cust2.470 arr_cust2.471
+                                       arr_cust2.473 arr_cust2.474 arr_cust2.475
+                                       arr_cust2.476 arr_cust2.477 arr_cust2.491
+                                       arr_cust2.492 arr_cust2.493 arr_cust2.494
+                                       arr_cust2.495 arr_cust2.509 arr_cust2.510
+                                       arr_cust2.511 arr_cust2.512 arr_cust2.513
+                                       arr_cust2.521 arr_cust2.522 arr_cust2.536
+                                       arr_cust2.553 arr_cust2.554 arr_cust2.555
+                                       arr_cust2.556 arr_cust2.580 arr_cust2.581
+                                       arr_cust2.582 arr_cust2.583 arr_cust2.584
+                                       arr_cust2.622 arr_cust2.623 arr_cust2.636
+                                       arr_cust2.639 arr_cust2.640 arr_cust2.660
+                                       arr_cust2.677 arr_cust2.678 arr_cust2.709
+                                       arr_cust2.710 arr_cust2.711 arr_cust2.712
+                                       arr_cust2.713 arr_cust2.719 arr_cust2.720
+                                       arr_cust2.737 arr_cust2.757 arr_cust2.758
+                                       arr_cust2.759 arr_cust2.760 arr_cust2.761
+                                       arr_cust2.774 arr_cust2.775 arr_cust2.779
+                                       arr_cust2.780 arr_cust2.781 arr_cust2.782
+                                       arr_cust2.783 arr_cust2.784 arr_cust2.785
+                                       arr_cust2.796 arr_cust2.797 arr_cust2.798
+                                       arr_cust2.799 arr_cust2.800 arr_cust2.804
+                                       arr_cust2.805 arr_cust2.806 arr_cust2.807
+                                       arr_cust2.808 arr_cust2.809 arr_cust2.813
+                                       arr_cust2.814 arr_cust2.818 arr_cust2.819
+                                       arr_cust2.820 arr_cust2.821 arr_cust2.822
+                                       arr_cust2.847 arr_cust2.853 arr_cust2.854
+                                       arr_cust2.855 arr_cust2.856 arr_cust2.857
+                                       arr_cust2.858 arr_cust2.859 arr_cust2.860
+                                       arr_cust2.861 arr_cust2.862 arr_cust2.917
+                                       arr_cust2.918 arr_cust2.919 arr_cust2.920
+                                       arr_cust2.921 arr_cust2.926 arr_cust2.927
+                                       arr_cust2.955 arr_cust2.956 arr_cust2.959
+                                       arr_cust2.961 arr_cust2.962 arr_cust2.963
+                                       arr_cust2.964 arr_cust2.965 arr_cust2.968
+                                       arr_cust2.969 arr_cust2.970 arr_cust2.971
+                                       arr_cust2.972                            
+Curb[3].9       1 of 1    183    serv: arr_cust3.18                             
+                                queue: arr_cust3.19  arr_cust3.65  arr_cust3.66 
+                                       arr_cust3.94  arr_cust3.95  arr_cust3.96 
+                                       arr_cust3.125 arr_cust3.135 arr_cust3.136
+                                       arr_cust3.137 arr_cust3.138 arr_cust3.139
+                                       arr_cust3.165 arr_cust3.166 arr_cust3.174
+                                       arr_cust3.175 arr_cust3.176 arr_cust3.177
+                                       arr_cust3.178 arr_cust3.179 arr_cust3.180
+                                       arr_cust3.203 arr_cust3.204 arr_cust3.208
+                                       arr_cust3.209 arr_cust3.210 arr_cust3.211
+                                       arr_cust3.212 arr_cust3.218 arr_cust3.219
+                                       arr_cust3.227 arr_cust3.228 arr_cust3.238
+                                       arr_cust3.239 arr_cust3.247 arr_cust3.269
+                                       arr_cust3.270 arr_cust3.277 arr_cust3.278
+                                       arr_cust3.284 arr_cust3.285 arr_cust3.296
+                                       arr_cust3.297 arr_cust3.298 arr_cust3.299
+                                       arr_cust3.300 arr_cust3.301 arr_cust3.314
+                                       arr_cust3.332 arr_cust3.333 arr_cust3.334
+                                       arr_cust3.335 arr_cust3.351 arr_cust3.372
+                                       arr_cust3.379 arr_cust3.380 arr_cust3.381
+                                       arr_cust3.382 arr_cust3.383 arr_cust3.385
+                                       arr_cust3.391 arr_cust3.414 arr_cust3.415
+                                       arr_cust3.422 arr_cust3.423 arr_cust3.424
+                                       arr_cust3.425 arr_cust3.426 arr_cust3.431
+                                       arr_cust3.432 arr_cust3.433 arr_cust3.434
+                                       arr_cust3.440 arr_cust3.441 arr_cust3.442
+                                       arr_cust3.443 arr_cust3.444 arr_cust3.456
+                                       arr_cust3.462 arr_cust3.463 arr_cust3.464
+                                       arr_cust3.465 arr_cust3.466 arr_cust3.472
+                                       arr_cust3.483 arr_cust3.484 arr_cust3.485
+                                       arr_cust3.486 arr_cust3.487 arr_cust3.488
+                                       arr_cust3.504 arr_cust3.505 arr_cust3.506
+                                       arr_cust3.507 arr_cust3.508 arr_cust3.530
+                                       arr_cust3.549 arr_cust3.550 arr_cust3.559
+                                       arr_cust3.560 arr_cust3.561 arr_cust3.562
+                                       arr_cust3.566 arr_cust3.567 arr_cust3.568
+                                       arr_cust3.569 arr_cust3.570 arr_cust3.571
+                                       arr_cust3.592 arr_cust3.593 arr_cust3.594
+                                       arr_cust3.595 arr_cust3.596 arr_cust3.597
+                                       arr_cust3.598 arr_cust3.601 arr_cust3.602
+                                       arr_cust3.629 arr_cust3.630 arr_cust3.637
+                                       arr_cust3.638 arr_cust3.641 arr_cust3.642
+                                       arr_cust3.671 arr_cust3.672 arr_cust3.673
+                                       arr_cust3.674 arr_cust3.675 arr_cust3.676
+                                       arr_cust3.691 arr_cust3.714 arr_cust3.715
+                                       arr_cust3.716 arr_cust3.717 arr_cust3.718
+                                       arr_cust3.738 arr_cust3.739 arr_cust3.740
+                                       arr_cust3.741 arr_cust3.742 arr_cust3.743
+                                       arr_cust3.744 arr_cust3.752 arr_cust3.753
+                                       arr_cust3.754 arr_cust3.755 arr_cust3.756
+                                       arr_cust3.767 arr_cust3.768 arr_cust3.771
+                                       arr_cust3.823 arr_cust3.824 arr_cust3.825
+                                       arr_cust3.826 arr_cust3.827 arr_cust3.830
+                                       arr_cust3.831 arr_cust3.832 arr_cust3.833
+                                       arr_cust3.834 arr_cust3.835 arr_cust3.836
+                                       arr_cust3.837 arr_cust3.838 arr_cust3.868
+                                       arr_cust3.869 arr_cust3.870 arr_cust3.871
+                                       arr_cust3.872 arr_cust3.891 arr_cust3.892
+                                       arr_cust3.903 arr_cust3.904 arr_cust3.905
+                                       arr_cust3.906 arr_cust3.907 arr_cust3.914
+                                       arr_cust3.915 arr_cust3.924 arr_cust3.925
+                                       arr_cust3.930 arr_cust3.936 arr_cust3.937
+Curb[4].10      1 of 1    155    serv: arr_cust4.13                             
+                                queue: arr_cust4.14  arr_cust4.15  arr_cust4.16 
+                                       arr_cust4.17  arr_cust4.22  arr_cust4.23 
+                                       arr_cust4.24  arr_cust4.25  arr_cust4.26 
+                                       arr_cust4.48  arr_cust4.49  arr_cust4.60 
+                                       arr_cust4.61  arr_cust4.62  arr_cust4.63 
+                                       arr_cust4.64  arr_cust4.70  arr_cust4.71 
+                                       arr_cust4.72  arr_cust4.73  arr_cust4.74 
+                                       arr_cust4.105 arr_cust4.106 arr_cust4.114
+                                       arr_cust4.133 arr_cust4.134 arr_cust4.150
+                                       arr_cust4.151 arr_cust4.159 arr_cust4.169
+                                       arr_cust4.170 arr_cust4.171 arr_cust4.172
+                                       arr_cust4.173 arr_cust4.181 arr_cust4.198
+                                       arr_cust4.199 arr_cust4.200 arr_cust4.201
+                                       arr_cust4.202 arr_cust4.215 arr_cust4.216
+                                       arr_cust4.217 arr_cust4.225 arr_cust4.226
+                                       arr_cust4.235 arr_cust4.236 arr_cust4.246
+                                       arr_cust4.254 arr_cust4.255 arr_cust4.256
+                                       arr_cust4.257 arr_cust4.258 arr_cust4.276
+                                       arr_cust4.283 arr_cust4.308 arr_cust4.326
+                                       arr_cust4.327 arr_cust4.361 arr_cust4.362
+                                       arr_cust4.363 arr_cust4.364 arr_cust4.365
+                                       arr_cust4.366 arr_cust4.367 arr_cust4.368
+                                       arr_cust4.369 arr_cust4.392 arr_cust4.445
+                                       arr_cust4.446 arr_cust4.447 arr_cust4.448
+                                       arr_cust4.454 arr_cust4.455 arr_cust4.478
+                                       arr_cust4.479 arr_cust4.480 arr_cust4.481
+                                       arr_cust4.482 arr_cust4.489 arr_cust4.490
+                                       arr_cust4.498 arr_cust4.516 arr_cust4.517
+                                       arr_cust4.518 arr_cust4.519 arr_cust4.520
+                                       arr_cust4.533 arr_cust4.534 arr_cust4.542
+                                       arr_cust4.552 arr_cust4.563 arr_cust4.576
+                                       arr_cust4.577 arr_cust4.587 arr_cust4.588
+                                       arr_cust4.589 arr_cust4.590 arr_cust4.591
+                                       arr_cust4.603 arr_cust4.606 arr_cust4.666
+                                       arr_cust4.667 arr_cust4.668 arr_cust4.669
+                                       arr_cust4.670 arr_cust4.679 arr_cust4.680
+                                       arr_cust4.681 arr_cust4.682 arr_cust4.683
+                                       arr_cust4.684 arr_cust4.685 arr_cust4.686
+                                       arr_cust4.687 arr_cust4.688 arr_cust4.689
+                                       arr_cust4.690 arr_cust4.692 arr_cust4.693
+                                       arr_cust4.694 arr_cust4.695 arr_cust4.696
+                                       arr_cust4.697 arr_cust4.698 arr_cust4.700
+                                       arr_cust4.726 arr_cust4.727 arr_cust4.747
+                                       arr_cust4.748 arr_cust4.749 arr_cust4.750
+                                       arr_cust4.751 arr_cust4.762 arr_cust4.763
+                                       arr_cust4.764 arr_cust4.765 arr_cust4.766
+                                       arr_cust4.777 arr_cust4.778 arr_cust4.874
+                                       arr_cust4.875 arr_cust4.876 arr_cust4.877
+                                       arr_cust4.878 arr_cust4.883 arr_cust4.884
+                                       arr_cust4.885 arr_cust4.913 arr_cust4.916
+                                       arr_cust4.973 arr_cust4.974 arr_cust4.975
+                                       arr_cust4.980 arr_cust4.981              
+Curb[5].11      1 of 1    154    serv: arr_cust5.37                             
+                                queue: arr_cust5.38  arr_cust5.39  arr_cust5.40 
+                                       arr_cust5.41  arr_cust5.91  arr_cust5.92 
+                                       arr_cust5.97  arr_cust5.98  arr_cust5.101
+                                       arr_cust5.102 arr_cust5.107 arr_cust5.108
+                                       arr_cust5.109 arr_cust5.110 arr_cust5.111
+                                       arr_cust5.117 arr_cust5.131 arr_cust5.132
+                                       arr_cust5.153 arr_cust5.154 arr_cust5.155
+                                       arr_cust5.156 arr_cust5.157 arr_cust5.158
+                                       arr_cust5.182 arr_cust5.183 arr_cust5.184
+                                       arr_cust5.193 arr_cust5.194 arr_cust5.195
+                                       arr_cust5.196 arr_cust5.197 arr_cust5.205
+                                       arr_cust5.213 arr_cust5.214 arr_cust5.220
+                                       arr_cust5.221 arr_cust5.222 arr_cust5.223
+                                       arr_cust5.224 arr_cust5.240 arr_cust5.241
+                                       arr_cust5.248 arr_cust5.249 arr_cust5.250
+                                       arr_cust5.251 arr_cust5.252 arr_cust5.253
+                                       arr_cust5.263 arr_cust5.286 arr_cust5.287
+                                       arr_cust5.316 arr_cust5.317 arr_cust5.325
+                                       arr_cust5.342 arr_cust5.345 arr_cust5.352
+                                       arr_cust5.353 arr_cust5.370 arr_cust5.371
+                                       arr_cust5.374 arr_cust5.375 arr_cust5.376
+                                       arr_cust5.377 arr_cust5.378 arr_cust5.384
+                                       arr_cust5.393 arr_cust5.394 arr_cust5.395
+                                       arr_cust5.396 arr_cust5.397 arr_cust5.398
+                                       arr_cust5.400 arr_cust5.401 arr_cust5.457
+                                       arr_cust5.458 arr_cust5.459 arr_cust5.460
+                                       arr_cust5.461 arr_cust5.499 arr_cust5.500
+                                       arr_cust5.501 arr_cust5.502 arr_cust5.503
+                                       arr_cust5.523 arr_cust5.524 arr_cust5.574
+                                       arr_cust5.575 arr_cust5.612 arr_cust5.613
+                                       arr_cust5.614 arr_cust5.615 arr_cust5.616
+                                       arr_cust5.624 arr_cust5.625 arr_cust5.626
+                                       arr_cust5.627 arr_cust5.628 arr_cust5.631
+                                       arr_cust5.632 arr_cust5.633 arr_cust5.634
+                                       arr_cust5.635 arr_cust5.644 arr_cust5.645
+                                       arr_cust5.646 arr_cust5.647 arr_cust5.648
+                                       arr_cust5.649 arr_cust5.650 arr_cust5.651
+                                       arr_cust5.652 arr_cust5.653 arr_cust5.654
+                                       arr_cust5.699 arr_cust5.702 arr_cust5.703
+                                       arr_cust5.735 arr_cust5.736 arr_cust5.769
+                                       arr_cust5.770 arr_cust5.772 arr_cust5.773
+                                       arr_cust5.776 arr_cust5.803 arr_cust5.812
+                                       arr_cust5.815 arr_cust5.816 arr_cust5.817
+                                       arr_cust5.873 arr_cust5.898 arr_cust5.899
+                                       arr_cust5.900 arr_cust5.901 arr_cust5.902
+                                       arr_cust5.928 arr_cust5.929 arr_cust5.938
+                                       arr_cust5.939 arr_cust5.940 arr_cust5.941
+                                       arr_cust5.942 arr_cust5.948 arr_cust5.949
+                                       arr_cust5.950 arr_cust5.951 arr_cust5.952
+                                       arr_cust5.984 arr_cust5.985 arr_cust5.988
+                                       arr_cust5.989 arr_cust5.990 arr_cust5.991
+                                       arr_cust5.992                            
+rest.12         1 of 1      4    serv: shuttle.9                                
+                                queue: shuttle.10    shuttle.11    shuttle.12   
+                                       shuttle.8                                
+shuttle spo.5   0 of 1      0    serv: idle                                     
+shuttle spo.5   0 of 1      0    serv: idle                                     
+shuttle spo.5   0 of 1      0    serv: idle                                     
+shuttle spo.5   0 of 1      0    serv: idle                                     
+shuttle spo.6   0 of 1      0    serv: idle                                     
+shuttle spo.6   0 of 1      0    serv: idle                                     
+                                                                                
+STATUS OF STORAGES 
+
+                            queue  
+name.id        available    length     processes
+--------------------------------------------------------------------------------
+                                                                                
+STATUS OF BUFFERS
+name.id           size  current  qLength processes
+--------------------------------------------------------------------------------
+
+STATUS OF GLOBAL EVENTS
+
+                         counts
+name.id        state   wait/queue      processes
+--------------------------------------------------------------------------------
+evnt_list_e.1   !occ      0/0    wait:
+converged.2     !occ      0/0    wait:
+end batch.3     !occ      0/0    wait:
+sim term.4      !occ      0/0    wait:
+mbs.13          !occ      0/0    wait:
+get_off_now.1   !occ      0/0    wait:
+get_off_now.1   !occ      0/0    wait:
+get_off_now.1   !occ      0/0    wait:
+get_off_now.2   !occ      0/0    wait:
+get_off_now.2   !occ      0/0    wait:
+mbs.24          !occ      0/0    wait:
+got_off[0]..2   !occ      0/0    wait:
+got_off[1]..2   !occ      0/0    wait:
+got_off[2]..3   !occ      0/0    wait:
+got_off[3]..3   !occ      0/0    wait:
+got_off[4]..3   !occ      0/0    wait:
+mbs.35          !occ      0/0    wait:
+board shutt.3   !occ      0/1    wait:
+                                queue: dep_cust.20                              
+board shutt.3   !occ      0/1    wait:
+                                queue: arr_cust1.32                             
+board shutt.4   !occ      0/1    wait:
+                                queue: arr_cust2.21                             
+board shutt.4   !occ      0/1    wait:
+                                queue: arr_cust3.18                             
+board shutt.4   !occ      0/1    wait:
+                                queue: arr_cust4.13                             
+board shutt.4   !occ      0/1    wait:
+                                queue: arr_cust5.37                             
+boarded.set.4   !occ      0/0    wait:
+boarded[0].49   !occ      0/0    wait:
+boarded[1].50   !occ      0/0    wait:
+boarded[2].51   !occ      0/0    wait:
+boarded[3].52   !occ      0/0    wait:
+boarded[4].53   !occ      0/0    wait:
+call button.5   !occ      0/1    wait:
+                                queue: shuttle.9                                
+                                                                                
+STATUS OF GLOBAL MAILBOXES 
+
+                message    process 
+name.id          count      count      processes
+--------------------------------------------------------------------------------
+get_off_now.1       0          0      
+get_off_now.1       0          0      
+get_off_now.1       0          0      
+get_off_now.2       0          0      
+get_off_now.2       0          0      
+got_off[0].25       0          0      
+got_off[1].27       0          0      
+got_off[2].29       0          0      
+got_off[3].31       0          0      
+got_off[4].33       0          0      
+board shutt.3      -1          1       dep_cust.20                              
+board shutt.3      -1          1       arr_cust1.32                             
+board shutt.4      -1          1       arr_cust2.21                             
+board shutt.4      -1          1       arr_cust3.18                             
+board shutt.4      -1          1       arr_cust4.13                             
+board shutt.4      -1          1       arr_cust5.37                             
+call button.5      -1          1       shuttle.9                                
+                                                                                
+STATUS OF EVENT LIST 
+
+position        time         process              event type  
+--------------------------------------------------------------
+    0          648.065122    arr_cust5.998        create      
+    1          648.065122    arr_cust5.999        create      
+    2          648.065122    arr_cust5.1000       create      
+    3          652.339579    Car lot.2            hold        
+    4          652.942277    Terminal 1.3         hold        
+    5          653.240454    Terminal 4.6         hold        
+    6          662.587559    Terminal 2.4         hold        
+    7          666.684131    Terminal 3.5         hold        
+    8         1440.000000    sim.1                hold        
+                                                                                
+~/CS_177/lab4/CS_177_lab4
+ibona001@bolt $ 
+
