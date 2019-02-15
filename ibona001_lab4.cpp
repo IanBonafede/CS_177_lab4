@@ -71,7 +71,7 @@ extern "C" void sim()      // main process
   places = new string[t+1];
   places[0] = "Car lot";
   for(int i = 1; i < t+1; i++) {
-    places[i] = "Terminal " + to_string(i);
+    places[i] = "Terminal " + to_string(i-1);
   }
   
   people = new string[t+1];
@@ -85,12 +85,14 @@ extern "C" void sim()      // main process
   create("sim");
   shuttle_occ.add_histogram(NUM_SEATS+1,0,NUM_SEATS);
   
+  for(int i = 0; i < s; i++) {
+    shuttle(i);  
+  }
+  
   for(int i = 0; i < t+1; i++) {
     make_passengers(i);  // generate streams of customers
   }
-  for(int i = 0; i < s; i++) {
-    shuttle(i);  // create a single shuttle
-  }
+  
   hold (1440);              // wait for a whole day (in minutes) to pass
   report();
   
@@ -106,7 +108,7 @@ void make_passengers(long whereami)
 
   while(clock < 1440.)          // run for one day (in minutes)
   {
-    hold(expntl(m));           // exponential interarrivals, mean 10 minutes
+    hold(expntl(m));           // exponential interarrivals, mean m
     long group = group_size();
     for (long i=0;i<group;i++)  // create each member of the group
       passenger(whereami);      // new passenger appears at this location
@@ -118,13 +120,14 @@ void make_passengers(long whereami)
 void passenger(long whoami)
 {
   const char* myName=people[whoami].c_str(); // hack because CSIM wants a char*
+  create(myName);
   long wheretogo = -1;
   long myShuttleID = -1;
   long dest = -2;
   while(wheretogo == -1 && wheretogo == whoami && wheretogo == whoami + 1) 
     wheretogo = (int) uniform(0, t);
 
-  create(myName);
+  
 	
   
   (*buttons)[whoami].reserve();     // join the queue at my starting location
@@ -180,7 +183,7 @@ void loop_around_airport(long &seats_used, long &id) { // one trip around the ai
   // Start by picking up departing passengers at car lot
   long didGetOff;
   
-  cout << "looping" << endl;
+  //cout << "looping" << endl;
   
   for(int i = 0; i < t+1; i++) { // loop through all places
     (*placeCurbs)[i].reserve();
@@ -207,9 +210,9 @@ void loop_around_airport(long &seats_used, long &id) { // one trip around the ai
     shuttle_occ.note_value(seats_used);
 
     (*placeCurbs)[i].release();
-      hold (uniform(3,5));  // drive to next airport terminal or rest
-    }
-     cout << "done looping" << endl;
+    hold (uniform(3,5));  // drive to next airport terminal or rest
+  }
+  //cout << "done looping" << endl;
   // Back to starting point. Bus is empty. Maybe I can rest...
 }
 
