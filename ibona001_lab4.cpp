@@ -150,6 +150,7 @@ void shuttle(long id) {
   long who_pushed = -1;
   while(1) {  // loop forever
     // start off in idle state, waiting for the first call...
+    who_pushed = -1;
     
     rest->reserve();                   // relax at garage till called from somewhere
     shuttle_called->receive((long*) &who_pushed);
@@ -179,16 +180,12 @@ void loop_around_airport(long &seats_used, long &id) { // one trip around the ai
   // Start by picking up departing passengers at car lot
   long didGetOff;
   
-  
+  cout << "looping" << endl;
   
   for(int i = 0; i < t+1; i++) { // loop through all places
     (*placeCurbs)[i].reserve();
     
-    load_shuttle(i, seats_used, id);
-    shuttle_occ.note_value(seats_used);
-  
-  
-  
+    
     // drop off all departing passengers at airport terminal
     for(int j = 0; j < seats_used; j++) {
       (*get_off_now)[id].send(i); // open door and let them off
@@ -196,16 +193,37 @@ void loop_around_airport(long &seats_used, long &id) { // one trip around the ai
       if(didGetOff == (long)"yes")
     	  seats_used = seats_used - 1;
     }
+
+
+
+    
+    load_shuttle(i, seats_used, id);
+    shuttle_occ.note_value(seats_used);
+  
+  
+  
+    
+    
     shuttle_occ.note_value(seats_used);
 
     (*placeCurbs)[i].release();
-    hold (uniform(3,5));  // drive to next airport terminal or rest
-  }
+      hold (uniform(3,5));  // drive to next airport terminal or rest
+    }
+     cout << "done looping" << endl;
   // Back to starting point. Bus is empty. Maybe I can rest...
 }
 
 void load_shuttle(long whereami, long &on_board, long &id)  // manage passenger loading
 {
+  
+  if((on_board < NUM_SEATS) && ((*buttons)[whereami].num_busy() + (*buttons)[whereami].qlength() > 0))
+  {
+    (*hop_on)[whereami].send(id);// invite one person to board
+    (*boarded)[id].wait();  // pause until that person is seated
+    on_board++;
+    hold(TINY);  // let next passenger (if any) reset the button
+  }
+  
   // invite passengers to enter, one at a time, until all seats are full
   while((on_board < NUM_SEATS) &&
     ((*buttons)[whereami].num_busy() + (*buttons)[whereami].qlength() > 0))
